@@ -30,38 +30,26 @@
     </style>
 </head>
 <body>
-    <nav id = "desktop-nav">
-        <div class = "logo"> Vatsal Malkari</div>
-        <div>
-            <ul class = "nav-links">
-                <li><a href="#about"> About </a></li>
-                <li><a href="#leadership"> Leadership </a></li>
-                <li><a href="#experience"> Experience </a></li>
-                <li><a href="#projects"> Projects </a></li>
-                <li><a href="#contact"> Contact </a></li>
-            </ul>
-        </div>
-    </nav>
-    <nav id="hamburger-nav">
+
+    <!-- Navigation -->
+    <nav id="desktop-nav">
         <div class="logo">Vatsal Malkari</div>
-        <div class="hamburger-menu">
-            <div class="hamburger-icon" onclick="toggleMenu()">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-            <div class="menu-links">
-                <li><a href="#about" onclick="toggleMenu()">About</a></li>
-                <li><a href="#leadership" onclick="toggleMenu()">Leadership</a></li>
-                <li><a href="#experience" onclick="toggleMenu()">Experience</a></li>
-                <li><a href="#projects" onclick="toggleMenu()">Projects</a></li>
-                <li><a href="#contact" onclick="toggleMenu()">Contact</a></li>
-            </div>s
-        </div>
+        <ul class="nav-links">
+            <li><a href="#about">About</a></li>
+            <li><a href="#summary">Summary</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#leadership">Leadership</a></li>
+            <li><a href="#education">Education</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
     </nav>
+
+    <!-- Profile / Intro Section -->
     <section id="profile">
         <div class="section_pic-container">
-            <img src="./assets/okpic.png"Vatsal Malkari profile picture>
+            <img src="./assets/okpic.png" alt="Vatsal Malkari profile picture">
         </div>
         <div class="section_text">
             <p class="section_text_p1">Hello, I'm</p>
@@ -78,6 +66,7 @@
         </div>
     </section>
 
+    <!-- About Section -->
     <section id="about">
         <p class="section_text_p1">Get To Know More</p>
         <h1 class="title">About Me</h1>
@@ -304,38 +293,40 @@
         </ul>
     </section>
 
-    <!-- Contact -->
-    <section id="contact">
-        <h1 class="title">Contact Me</h1>
-        <div class="contact-info-upper-container">
-            <div class="contact-info-container">
-                <img src="./assets/email.png" alt="Email icon" class="icon contact-icon" />
-                <p>
-                    <a href="mailto:vatsalmalkari@gmail.com">vatsalmalkari@gmail.com</a>
-                </p>
-            </div>
-            <div class="contact-info-container">
-                <img src="./assets/linkedin.png" alt="LinkedIn icon" class="icon contact-icon" />
-                <p>
-                    <a href="https://www.linkedin.com/in/vatsal-malkari/">LinkedIn</a>
-                </p>
-            </div>
-        </div>
+    <!-- Skills Section -->
+    <section id="skills">
+        <h1 class="title">Skills</h1>
+        <ul>
+            <li><strong>Languages:</strong> Python, Java, C, SQL, JavaScript</li>
+            <li><strong>Frameworks:</strong> Spring Boot, Flask, FastAPI, Scikit-learn, PyTorch, Keras, Gradio</li>
+            <li><strong>Tools & Platforms:</strong> Git, Docker, Render, BigQuery ML, Google Gemini API, Jupyter Notebook</li>
+            <li><strong>Databases:</strong> PostgreSQL, ChromaDB</li>
+            <li><strong>Libraries:</strong> TensorFlow, Pandas, NumPy, OpenCV, Material Design, Express.js</li>
+            <li><strong>Concepts:</strong> REST APIs, RAG, MLOps, CI/CD, Authentication & Authorization, Multithreading, Memory Management</li>
+        </ul>
     </section>
 
-    <footer>
-        <nav>
-            <div class="nav-links-container">
-                <ul class="nav-links">
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#Leadership">Leadership</a></li>
-                    <li><a href = "#experience">Experience</a></li>
-                    <li><a href="#projects">Projects</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-            </div>
-        </nav>
-        <p>Copyright &#169; 2025 Vatsal Malkari. All Rights Reserved.</p>
-    </footer>
+    <!-- Leadership Section -->
+    <section id="leadership">
+        <h1 class="title">Leadership & Activities</h1>
+        <ul>
+            <li><strong>Alpha Phi Omega:</strong> Webmaster, Brotherhood Engagement Committee, Alumni Chair</li>
+            <li><strong>Volunteer:</strong> Five Loaves Food Pantry</li>
+        </ul>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education">
+        <h1 class="title">Education</h1>
+        <p>Rutgers University — New Brunswick, NJ<br>B.S. in Computer Science & Data Science</p>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <h1 class="title">Contact</h1>
+        <p>Email: example@example.com</p>
+        <p>Phone: (123) 456-7890</p>
+    </section>
+
 </body>
 </html>
