@@ -30,12 +30,50 @@
     </style>
 </head>
 <body>
+<<<<<<< HEAD
+    <!-- Navigation -->
+    <nav id="desktop-nav">
+        <div class="logo">Vatsal Malkari</div>
+        <ul class="nav-links">
+            <li><a href="#about">About</a></li>
+            <li><a href="#summary">Summary</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#leadership">Leadership</a></li>
+            <li><a href="#education">Education</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Summary -->
+    <section id="summary">
+        <h1 class="title">Summary</h1>
+        <p>
+            Incoming master’s student at Rutgers University with a B.S. in Computer Science and Data Science.
+            Experienced in building secure full-stack applications, machine learning pipelines, and system tools.
+        </p>
+    </section>
+
+    <!-- Experience -->
+    <section id="experience">
+        <h1 class="title">Experience</h1>
+        <details>
+            <summary>Extern — NJCCIC via Rutgers MBS Externship Exchange (Jan 2025 – May 2025)</summary>
+            <ul>
+                <li>Built anomaly detection models using autoencoders in BigQuery ML to identify suspicious login behavior.</li>
+                <li>Engineered features from authentication logs, incorporating MFA usage and login timing deviations.</li>
+                <li>Analyzed geolocation and user-agent data for risk patterns; optimized performance using vectorized code.</li>
+            </ul>
+        </details>
+=======
     <nav id = "desktop-nav">
         <div class = "logo"> Vatsal Malkari</div>
         <div>
             <ul class = "nav-links">
                 <li><a href="#about"> About </a></li>
                 <li><a href="#leadership"> Leadership </a></li>
+                <li><a href="#experience"> Experience </a></li>
                 <li><a href="#projects"> Projects </a></li>
                 <li><a href="#contact"> Contact </a></li>
             </ul>
@@ -52,6 +90,7 @@
             <div class="menu-links">
                 <li><a href="#about" onclick="toggleMenu()">About</a></li>
                 <li><a href="#leadership" onclick="toggleMenu()">Leadership</a></li>
+                <li><a href="#experience" onclick="toggleMenu()">Experience</a></li>
                 <li><a href="#projects" onclick="toggleMenu()">Projects</a></li>
                 <li><a href="#contact" onclick="toggleMenu()">Contact</a></li>
             </div>s
@@ -66,11 +105,11 @@
             <h1 class="title">Vatsal Malkari</h1>
             <p class="section_text_p2">Computer Science and Data Science Student</p>
             <div class="btn-container">
-                <button class="btn btn-color-2" onclick="window.open('./assets/resume.pdf')">Download CV</button>
+                <button class="btn btn-color-2" onclick="window.open('./assets/Vatsal.Malkari.resume.2.pdf')">Download CV</button>
                 <button class="btn btn-color-1" onclick="location.href='./#contact'">Contact Info</button>
             </div>
             <div id="socials-container">
-                <img src="./assets/linkedin.png" alt="My LinkedIn Profile" class="icon" onclick="location.href='https://www.linkedin.com/in/vatsalmalkari'"/>
+                <img src="./assets/linkedin.png" alt="My LinkedIn Profile" class="icon" onclick="location.href='https://www.linkedin.com/in/vatsal-malkari/'"/>
                 <img src="./assets/github.png" alt="My GitHub Profile" class="icon" onclick="location.href='https://github.com/vatsalmalkari'"/>
             </div>
         </div>
@@ -84,31 +123,78 @@
                 <div class="about-containers">
                     <div class="details-container" style="margin-left: 0;">
                         <img src="./assets/education.png" alt="Education icon" class="icon"/>
-                        <h3 style="font-size: 2rem;">Education</h3> <!-- Increased font size -->
-                        <p style="font-size: 1.5rem;">B.Sc. Bachelor’s Degree <br />Computer Science & Data Science</p> <!-- Increased font size -->
+                        <h3 style="font-size: 2rem;">Education</h3>
+                        <p style="font-size: 1.5rem;">B.Sc. Bachelor’s Degree <br />Computer Science & Data Science</p> 
                     </div>
                 </div>
                 <div class="text-container">
                     <p>
-                        I am a senior at Rutgers University pursuing a Bachelor’s in Computer Science and Data Science. 
-                        My academic and project experience includes machine learning, web development, and software development. 
-                        I am a member of Alpha Phi Omega, holding leadership roles such as Webmaster and Alumni Chair. 
-                        I’ve developed various projects, including an NFL game outcome predictor using machine learning and a Unix-like shell.
+                        I am a recent graduate in Data Science and Computer Science, starting my Master’s in Data Science next semester. 
+                        I'm passionate about turning data into real-world impact. 
+                        I’m looking for opportunities in data science, analytics, or software development where I can grow, and keep learning. 
+                        I value work that solves meaningful problems.
                     </p>
                 </div>
             </div>
         </div>
         <img src="./assets/arrow.png" alt="Arrow icon" class="icon arrow" onclick="location.href='./#experience'" />
+>>>>>>> 7481756 (Add updated portfolio)
     </section>
-    
 
+<<<<<<< HEAD
+    <!-- Projects -->
+    <section id="projects">
+        <h1 class="title">Projects</h1>
+        <details>
+            <summary>NBA Player Management System</summary>
+            <ul>
+                <li>Full-stack Spring Boot app with PostgreSQL and Thymeleaf.</li>
+                <li>Implemented Spring Security with granular authorization rules.</li>
+            </ul>
+        </details>
+        <details>
+            <summary>Lightweight C Task Scheduler</summary>
+            <ul>
+                <li>Thread-safe scheduler in C using min-heap and hash table.</li>
+                <li>Implemented precise task timing with CLOCK_MONOTONIC.</li>
+            </ul>
+        </details>
+        <details>
+            <summary>AOT and FMAB QA System</summary>
+            <ul>
+                <li>RAG pipeline with ChromaDB + Sentence Transformers.</li>
+                <li>Gradio UI with trivia, summary, and fanfiction modes.</li>
+            </ul>
+        </details>
+        <details>
+            <summary>Wine Quality Classification System</summary>
+            <ul>
+                <li>ML pipeline with PCA + Decision Tree classifier.</li>
+                <li>Deployed REST API on Render for real-time inference.</li>
+            </ul>
+        </details>
+        <details>
+            <summary>Emotion Recognition Model</summary>
+            <ul>
+                <li>PyTorch CNN for facial emotion recognition (66.34% accuracy).</li>
+                <li>Integrated OpenCV for live face detection.</li>
+            </ul>
+        </details>
+        <details>
+            <summary>Pneumonia & Brain Cancer Detection</summary>
+            <ul>
+                <li>TensorFlow/Keras CNNs for pneumonia and tumor detection (85% accuracy).</li>
+                <li>Flask API for serving predictions.</li>
+            </ul>
+        </details>
+    </section>
+=======
     <section id="leadership">
       <p class="section__text__p1"></p>
       <h1 class="title">Leadership & Activities</h1>
       <div class="experience-details-container">
           <div class="about-containers">
               
-              <!-- First Role: Webmaster -->
               <div class="details-container">
                   <h2 class="experience-sub-title">Alpha Phi Omega – Webmaster</h2>
                   <article>
@@ -117,7 +203,6 @@
                   </article>
               </div>
     
-              <!-- Second Role: Alumni Chair -->
               <div class="details-container">
                   <h2 class="experience-sub-title">Alpha Phi Omega – Alumni Chair</h2>
                   <article>
@@ -126,7 +211,6 @@
                   </article>
               </div>
     
-              <!-- Third Role: Brotherhood Engagement Committee -->
               <div class="details-container">
                   <h2 class="experience-sub-title">Alpha Phi Omega – Brotherhood Engagement Committee</h2>
                   <article>
@@ -146,68 +230,178 @@
               </article>
           </div>
     
-          <!-- Skills Section -->
-          <div class="details-container">
-              <h2 class="experience-sub-title">Skills</h2>
-              <article>
-                  <img src="./assets/checkmark.png" alt="Experience icon" class="icon" />
-                  <div>
-                      <h3>HTML, CSS, JavaScript</h3>
-                      <p>Advanced</p>
-                  </div>
-              </article>
-              <article>
-                  <img src="./assets/checkmark.png" alt="Experience icon" class="icon" />
-                  <div>
-                      <h3>Python, Java, C</h3>
-                      <p>Advanced</p>
-                  </div>
-              </article>
-              <article>
-                  <img src="./assets/checkmark.png" alt="Experience icon" class="icon" />
-                  <div>
-                      <h3>React, C++</h3>
-                      <p>Intermediate</p>
-                  </div>
-              </article>
-          </div>
-      </div>
-      <img src="./assets/arrow.png" alt="Arrow icon" class="icon arrow" onclick="location.href='./#projects'" />
-    </section>
-    
-    <section id="projects">
-        <p class="section_text_p1">Browse My Recent</p>
-        <h1 class="title">Projects</h1>
-        <div class="experience-details-container">
-            <div class="about-containers">
-                <div class="details-container color-container">
-                    <img src="./assets/chessai.png" alt="Project 1" class="project-img" />
-                    <h2 class="experience-sub-title project-title">Chess AI Bot</h2>
-                    <p>Developed a chess engine with a Pygame GUI and AI using minimax with alpha-beta pruning. 
-                      Created an evaluation function combining material and positional scoring for intelligent AI decisions. 
-                        <a href="https://github.com/vatsalmalkari/chessAi">GitHub</a></p>
-                </div>
+         <!-- Skills Section -->
+<div class="details-container">
+    <h2 class="experience-sub-title">Skills</h2>
 
-                <div class="details-container color-container">
-                    <img src="./assets/nflpredictor.png" alt="Project 2" class="project-img" />
-                    <h2 class="experience-sub-title project-title">NFL Game Outcome Predictor</h2>
-                    <p>Built a machine learning model to predict NFL game outcomes using team statistics. 
-                        Achieved an AUC score of 0.92 with XGBoost. <a href="https://github.com/vatsalmalkari/nflpredictor">GitHub</a></p>
-                </div>
-
-                <div class="details-container color-container">
-                    <img src="./assets/todolist.png" alt="Project 3" class="project-img" />
-                    <h2 class="experience-sub-title project-title">React To-Do List App with AI Integration</h2>
-                    <p>Developed a task management app with a chatbot for task categorization. 
-                        Implemented persistent data storage using localStorage. <a href="https://github.com/vatsalmalkari/todolist">GitHub</a></p>
-                </div>
-            </div>
+    <!-- Languages -->
+    <article>
+        <img src="./assets/checkmark.png" alt="Experience icon" class="icon" />
+        <div>
+            <h3>Languages</h3>
+            <p>Python, Java, C, SQL, JavaScript</p>
         </div>
+    </article>
+
+    <!-- Frameworks -->
+    <article>
+        <img src="./assets/checkmark.png" alt="Experience icon" class="icon" />
+        <div>
+            <h3>Frameworks</h3>
+            <p>Spring Boot, Scikit-learn, Flask, Gradio, PyTorch, FastAPI</p>
+        </div>
+    </article>
+
+    <!-- Tools & Platforms -->
+    <article>
+        <img src="./assets/checkmark.png" alt="Experience icon" class="icon" />
+        <div>
+            <h3>Tools & Platforms</h3>
+            <p>Docker, Git, Render, BigQuery ML, Google Gemini API</p>
+        </div>
+    </article>
+
+    <!-- Databases -->
+    <article>
+        <img src="./assets/checkmark.png" alt="Experience icon" class="icon" />
+        <div>
+            <h3>Databases</h3>
+            <p>PostgreSQL, ChromaDB</p>
+        </div>
+    </article>
+
+    <!-- Libraries -->
+    <article>
+        <img src="./assets/checkmark.png" alt="Experience icon" class="icon" />
+        <div>
+            <h3>Libraries</h3>
+            <p>TensorFlow, Pandas, Material Design, Express.js, Tokio, Warp</p>
+        </div>
+    </article>
+
+    <!-- Concepts -->
+    <article>
+        <img src="./assets/checkmark.png" alt="Experience icon" class="icon" />
+        <div>
+            <h3>Concepts</h3>
+            <p>REST APIs, CI/CD, Retrieval-Augmented Generation (RAG), ML Ops, Authentication, Multithreading, Memory Management</p>
+        </div>
+    </article>
+</div>
+</div>
+<img src="./assets/arrow.png" alt="Arrow icon" class="icon arrow" onclick="location.href='./#projects'" />
+</section>
+
+<!-- Experience Section -->
+<section id="experience">
+    <h2 class="experience-sub-title">Experience</h2>
+    <div class="details-container">
+        <article>
+            <img src="./assets/experience.png" alt="Work icon" class="icon" />
+            <div>
+                <h3>Extern — NJCCIC via Rutgers MBS Externship Exchange</h3>
+                <p class="date">Jan 2025 – May 2025</p>
+                <ul>
+                    <li>Built anomaly detection models using autoencoders in BigQuery ML to identify suspicious login behavior.</li>
+                    <li>Engineered features from authentication logs, incorporating MFA usage, login timing deviations, and browser anomalies.</li>
+                    <li>Analyzed geolocation and user-agent data for risk patterns; optimized performance with vectorized code and efficient feature selection.</li>
+                </ul>
+            </div>
+        </article>
+    </div>
+</section>
+
+    
+<section id="projects">
+    <p class="section_text_p1">Browse My Recent</p>
+    <h1 class="title">Projects</h1>
+    <div class="experience-details-container">
+        <div class="about-containers">
+
+            <div class="details-container color-container">
+                <img src="./assets/aot-fmab-ai.png" alt="AOT FMAB AI" class="project-img" />
+                <h2 class="experience-sub-title project-title">Attack on Titan & FMAB Script AI</h2>
+                <p>Trained NLP models to generate dialogues in the style of two anime series, using fine-tuned transformers on character-specific datasets. <a href="https://github.com/vatsalmalkari/aot-fmab-ai">GitHub</a></p>
+            </div>
+
+            <div class="details-container color-container">
+                <img src="./assets/expressions-detect.png" alt="Facial Expressions Detector" class="project-img" />
+                <h2 class="experience-sub-title project-title">Facial Expressions Detector</h2>
+                <p>Built a CNN-based model to detect human facial emotions in real time, deployed with a Flask + OpenCV web app. <a href="https://github.com/vatsalmalkari/expressions-detect">GitHub</a></p>
+            </div>
+
+            <div class="details-container color-container">
+                <img src="./assets/medical-cnnn.png" alt="Medical CNN" class="project-img" />
+                <h2 class="experience-sub-title project-title">Medical Image CNN Classifier</h2>
+                <p>Developed a convolutional neural network to classify medical images, achieving high accuracy on chest X-ray datasets. <a href="https://github.com/vatsalmalkari/medical-cnn">GitHub</a></p>
+            </div>
+
+            <div class="details-container color-container">
+                <img src="./assets/nba-db.png" alt="NBA Database" class="project-img" />
+                <h2 class="experience-sub-title project-title">NBA Statistics Database</h2>
+                <p>Designed and implemented a relational database for NBA statistics with SQL queries for player performance analysis. <a href="https://github.com/vatsalmalkari/nba-db">GitHub</a></p>
+            </div>
+
+            <div class="details-container color-container">
+                <img src="./assets/task-scheduler.png" alt="Task Scheduler" class="project-img" />
+                <h2 class="experience-sub-title project-title">Python Task Scheduler</h2>
+                <p>Created a Python-based task scheduler with multithreading support and persistent storage for task automation. <a href="https://github.com/vatsalmalkari/task-scheduler">GitHub</a></p>
+            </div>
+
+            <div class="details-container color-container">
+                <img src="./assets/wine-predict.png" alt="Wine Quality Predictor" class="project-img" />
+                <h2 class="experience-sub-title project-title">Wine Quality Prediction</h2>
+                <p>Trained regression and classification models to predict wine quality using chemical composition data. <a href="https://github.com/vatsalmalkari/wine-predict">GitHub</a></p>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+>>>>>>> 7481756 (Add updated portfolio)
+
+    <!-- Skills -->
+    <section id="skills">
+        <h1 class="title">Skills</h1>
+        <ul>
+            <li><strong>Languages:</strong> Python, Java, C, SQL, JavaScript</li>
+            <li><strong>Frameworks:</strong> Spring Boot, Flask, FastAPI, Scikit-learn, PyTorch, Keras, Gradio</li>
+            <li><strong>Tools & Platforms:</strong> Git, Docker, Render, BigQuery ML, Google Gemini API, Jupyter Notebook</li>
+            <li><strong>Databases:</strong> PostgreSQL, ChromaDB</li>
+            <li><strong>Libraries:</strong> TensorFlow, Pandas, NumPy, OpenCV, Material Design, Express.js</li>
+            <li><strong>Concepts:</strong> REST APIs, RAG, MLOps, CI/CD, Authentication & Authorization, Multithreading, Memory Management</li>
+        </ul>
+    </section>
+
+    <!-- Leadership -->
+    <section id="leadership">
+        <h1 class="title">Leadership & Activities</h1>
+        <ul>
+            <li><strong>Alpha Phi Omega:</strong> Webmaster, Brotherhood Engagement Committee, Alumni Chair</li>
+        </ul>
+    </section>
+
+    <!-- Education -->
+    <section id="education">
+        <h1 class="title">Education</h1>
+        <p>Rutgers University — New Brunswick, NJ</p>
+        <ul>
+            <li>MS in Data Science (Expected Dec 2026)</li>
+            <li>BS in Computer Science & Data Science (Graduated May 2025)</li>
+        </ul>
     </section>
 
     <!-- Contact -->
     <section id="contact">
         <h1 class="title">Contact Me</h1>
+<<<<<<< HEAD
+        <p>Email: <a href="mailto:vatsalmalkari@gmail.com">vatsalmalkari@gmail.com</a></p>
+        <p>LinkedIn: <a href="https://www.linkedin.com/in/vatsalmalkari/">linkedin.com/in/vatsalmalkari</a></p>
+    </section>
+
+    <footer>
+        <p>Copyright &#169; 2025 Vatsal Malkari</p>
+=======
         <div class="contact-info-upper-container">
             <div class="contact-info-container">
                 <img src="./assets/email.png" alt="Email icon" class="icon contact-icon" />
@@ -218,7 +412,7 @@
             <div class="contact-info-container">
                 <img src="./assets/linkedin.png" alt="LinkedIn icon" class="icon contact-icon" />
                 <p>
-                    <a href="https://www.linkedin.com/in/vatsalmalkari">LinkedIn</a>
+                    <a href="https://www.linkedin.com/in/vatsal-malkari/">LinkedIn</a>
                 </p>
             </div>
         </div>
@@ -230,12 +424,14 @@
                 <ul class="nav-links">
                     <li><a href="#about">About</a></li>
                     <li><a href="#Leadership">Leadership</a></li>
+                    <li><a href = "#experience">Experience</a></li>
                     <li><a href="#projects">Projects</a></li>
                     <li><a href="#contact">Contact</a></li>
                 </ul>
             </div>
         </nav>
-        <p>Copyright &#169; 2023 Vatsal Malkari. All Rights Reserved.</p>
+        <p>Copyright &#169; 2025 Vatsal Malkari. All Rights Reserved.</p>
+>>>>>>> 7481756 (Add updated portfolio)
     </footer>
 </body>
 </html>
