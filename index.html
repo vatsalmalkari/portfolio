@@ -75,10 +75,9 @@
         .skill-category strong { color: var(--text-main); font-size: 1.05rem; }
         .skill-text { color: var(--text-muted); margin-left: 5px; }
 
-        /* Bigger Project Images */
         .project-img {
             width: 100%;
-            height: 280px; /* Increased from 200px */
+            height: 280px; 
             object-fit: cover;
             border-radius: 12px;
             margin-bottom: 1.5rem;
@@ -100,7 +99,7 @@
         section { padding: 4rem 10%; }
         .title { font-size: 2.5rem; margin-bottom: 2rem; text-align: center; }
         
-        #contact { padding-bottom: 2rem; } /* Reduced bottom padding */
+        #contact { padding-bottom: 2rem; } 
     </style>
 </head>
 <body>
@@ -118,19 +117,19 @@
 
     <section id="profile">
         <div class="section_pic-container">
-            <img src="./assets/okpic.png" alt="Vatsal Malkari">
+            <img src="./assets/okpic.png" loading="lazy" alt="Vatsal Malkari">
         </div>
         <div class="section_text">
             <p style="font-weight: 600; color: var(--text-muted);">Hello, I'm</p>
             <h1 class="title" style="text-align: left; margin-bottom: 0.5rem;">Vatsal Malkari</h1>
-            <p style="font-size: 1.25rem; margin-bottom: 1.5rem;">Computer Science & Data Science @ Rutgers</p>
+            <p style="font-size: 1.25rem; margin-bottom: 1.5rem;">Computer Science & Data Science @ Rutgers University</p>
             <div class="btn-container">
                 <button class="btn btn-color-2" onclick="window.open('./assets/vatsal_malkari_resume.pdf')">Download CV</button>
                 <button class="btn btn-color-1" onclick="location.href='#contact'">Contact Info</button>
             </div>
             <div id="socials-container" style="margin-top: 1.5rem; display: flex; gap: 1rem;">
-                <img src="./assets/linkedin.png" alt="LinkedIn" class="icon" style="cursor:pointer; width:32px" onclick="window.open('https://www.linkedin.com/in/vatsal-malkari/')"/>
-                <img src="./assets/github.png" alt="GitHub" class="icon" style="cursor:pointer; width:32px" onclick="window.open('https://github.com/vatsalmalkari')"/>
+                <img src="./assets/linkedin.png" loading="lazy" alt="LinkedIn" class="icon" style="cursor:pointer; width:32px" onclick="window.open('https://www.linkedin.com/in/vatsal-malkari/')"/>
+                <img src="./assets/github.png" loading="lazy" alt="GitHub" class="icon" style="cursor:pointer; width:32px" onclick="window.open('https://github.com/vatsalmalkari')"/>
             </div>
         </div>
     </section>
@@ -139,9 +138,14 @@
         <h1 class="title">About Me</h1>
         <div class="details-container">
             <p style="font-size: 1.1rem; text-align: center; max-width: 850px; margin: 0 auto;">
-                I am a Master’s in Data Science student at Rutgers with a background in Computer Science. 
-                I specialize in high-performance systems and ML pipelines. Whether it's optimizing protein modeling by <span class="highlight">41x</span> or building neural networks from scratch in <span class="highlight">C++</span>, I am driven by engineering efficiency and data-driven impact.
-            </p>
+    I’m a current Data Science graduate student at Rutgers with a background in Computer Science, focused on building 
+    <span class="highlight">high-performance systems</span> and 
+    <span class="highlight">scalable ML pipelines</span>.
+    I enjoy working close to the metal—whether that means optimizing protein modeling by 
+    <span class="highlight">41×</span>, implementing neural networks from scratch in 
+    <span class="highlight">C++</span>, or designing data pipelines that operate reliably at scale.
+</p>
+
         </div>
     </section>
 
@@ -163,11 +167,43 @@
     <section id="skills">
         <h1 class="title">Technical Toolbox</h1>
         <div class="details-container">
-            <div class="skill-category"><strong>• Languages:</strong><span class="skill-text">Python, C++, C, Java, SQL, JavaScript</span></div>
-            <div class="skill-category"><strong>• Machine Learning:</strong><span class="skill-text">PyTorch, TensorFlow, Transformers (Hugging Face), OpenCV, Scikit-Learn, Pandas, NumPy</span></div>
-            <div class="skill-category"><strong>• Backend:</strong><span class="skill-text">FastAPI, Flask, Spring Boot, Docker, PostgreSQL, ChromaDB, Git, CI/CD, Django</span></div>
-            <div class="skill-category"><strong>• Systems Engineering:</strong><span class="skill-text">Multithreading (pthreads), Concurrency, Memory Management, OS Scheduling, Linux/Unix</span></div>
-            <div class="skill-category"><strong>• Concepts:</strong><span class="skill-text">Object-Oriented Programming (OOP), Data Structures & Algorithms, REST APIs, System Design, JWT Auth</span></div>
+            <div class="skill-category">
+    <strong>Core Languages:</strong>
+    <span class="skill-text">Python, C++, C, Java, SQL, JavaScript</span>
+</div>
+
+<div class="skill-category">
+    <strong>Machine Learning & Data:</strong>
+    <span class="skill-text">
+        PyTorch, TensorFlow, Hugging Face Transformers, Scikit-Learn,
+        Pandas, NumPy, OpenCV
+    </span>
+</div>
+
+<div class="skill-category">
+    <strong>Backend & Infrastructure:</strong>
+    <span class="skill-text">
+        FastAPI, Flask, Django, Spring Boot,
+        PostgreSQL, Docker, Git, CI/CD, ChromaDB
+    </span>
+</div>
+
+<div class="skill-category">
+    <strong>Systems & Low-Level:</strong>
+    <span class="skill-text">
+        Multithreading (pthreads), Concurrency,
+        Memory Management, OS Scheduling, Linux/Unix
+    </span>
+</div>
+
+<div class="skill-category">
+    <strong>Core CS Foundations:</strong>
+    <span class="skill-text">
+        Data Structures & Algorithms, Object-Oriented Programming,
+        REST APIs, System Design, Authentication (JWT)
+    </span>
+</div>
+
         </div>
     </section>
 
@@ -175,37 +211,37 @@
         <h1 class="title">Featured Projects</h1>
         <div class="experience-details-container">
             <div class="details-container">
-                <img src="./assets/face_expression.png" alt="Face Expression Detector" class="project-img" />
+                <img src="./assets/face_expression.png" loading="lazy" alt="Face Expression Detector" class="project-img" />
                 <h3>C++ Face Expression Detector</h3>
-                <p>Developed a CNN from scratch in C++ to detect facial expressions via webcam, focusing on high-performance inference without heavy libraries.</p>
+                <p> Built to understand how modern deep learning frameworks work under the hood, I implemented a CNN entirely in C++ for real-time facial expression detection, focusing on efficient memory usage and fast inference without heavy ML libraries.</p>
                 <button class="btn btn-color-2" onclick="window.open('https://github.com/vatsalmalkari/Cpp-deep-learning-engine')">GitHub</button>
             </div>
 
             <div class="details-container">
-                <img src="./assets/bms.png" alt="BMS Project" class="project-img" />
+                <img src="./assets/bms.png" loading="lazy" alt="BMS Project" class="project-img" />
                 <h3>Optimized PTM Engine</h3>
-                <p>Engineered a protein modeling tool that achieved a <span class="highlight">41× speedup</span> in calculations using optimized data structures.</p>
+                <p> Designed a protein modeling engine to explore performance-oriented data structures, achieving a <span class="highlight">41× speedup</span> in computational output compared to baseline implementations.</p>
                 <button class="btn btn-color-2" onclick="window.open('https://github.com/vatsalmalkari/bms-project')">GitHub</button>
             </div>
 
             <div class="details-container">
-                <img src="./assets/python_compiler.png" alt="Python Compiler" class="project-img" />
+                <img src="./assets/python_compiler.png" loading="lazy" alt="Python Compiler" class="project-img" />
                 <h3>Python Compiler using C</h3>
-                <p>Made a basic Python compiler using C to understand language parsing and compilation processes. Supports data structures like dict, map, list, and basic control flow.</p>
+                <p>Built to understand language internals, this project implements a simplified Python compiler in C, covering lexical analysis, parsing, and execution for core data structures and control flow.</p>
                 <button class="btn btn-color-2" onclick="window.open('https://github.com/vatsalmalkari/python-compiler')">GitHub</button>
             </div>
 
             <div class="details-container">
-                <img src="./assets/task-scheduler.png" alt="Task Scheduler" class="project-img" />
+                <img src="./assets/task-scheduler.png" loading="lazy" alt="Task Scheduler" class="project-img" />
                 <h3>Python Task Scheduler</h3>
-                <p>Built a robust scheduler with multithreading support and persistent storage to automate complex task workflows.</p>
+                <p>Developed a multithreaded task scheduler to explore concurrency, synchronization, and persistent job execution in real-world automation workflows.</p>
                 <button class="btn btn-color-2" onclick="window.open('https://github.com/vatsalmalkari/task-scheduler')">GitHub</button>
             </div>
 
             <div class="details-container">
-                <img src="./assets/aot-fmab-ai.png" alt="AI Project" class="project-img" />
+                <img src="./assets/aot-fmab-ai.png" loading="lazy" alt="AI Project" class="project-img" />
                 <h3>Anime Script AI (RAG)</h3>
-                <p>Semantic search system using **ChromaDB** and **SentenceTransformers** for deep script analysis of anime data.</p>
+                <p>Built a semantic search and RAG system using ChromaDB and SentenceTransformers, enabling contextual querying and deep analysis of large anime script datasets.</p>
                 <button class="btn btn-color-2" onclick="window.open('https://github.com/vatsalmalkari/aot-fmab-ai')">GitHub</button>
             </div>
         </div>
@@ -244,7 +280,7 @@
             letter-spacing: 0.5px; 
         ">
             <p style="margin-bottom: 0.5rem; font-weight: 500;">
-                Email: <a href="mailto:vatsalmalkari@example.com" class="highlight" style="text-decoration: none;">vatsalmalkari@example.com</a>
+                Email: <a href="mailto:vatsalmalkari@gmail.com" class="highlight" style="text-decoration: none;">vatsalmalkari@gmail.com</a>
             </p>
             <p style="margin-bottom: 1rem; font-weight: 500;">
                 Phone: <span style="color: var(--text-main);">(925) 968-8233</span>
@@ -258,8 +294,8 @@
                 padding-top: 0.5rem;
                 border-top: 1px solid var(--border);
             ">
-                <img src="./assets/linkedin.png" alt="LinkedIn" class="icon" style="cursor:pointer; width:28px; transition: 0.3s;" onclick="window.open('https://www.linkedin.com/in/vatsal-malkari/')"/>
-                <img src="./assets/github.png" alt="GitHub" class="icon" style="cursor:pointer; width:28px; transition: 0.3s;" onclick="window.open('https://github.com/vatsalmalkari')"/>
+                <img src="./assets/linkedin.png" loading="lazy" alt="LinkedIn" class="icon" style="cursor:pointer; width:28px; transition: 0.3s;" onclick="window.open('https://www.linkedin.com/in/vatsal-malkari/')"/>
+                <img src="./assets/github.png" loading="lazy" alt="GitHub" class="icon" style="cursor:pointer; width:28px; transition: 0.3s;" onclick="window.open('https://github.com/vatsalmalkari')"/>
             </div>
         </div>
     </section>
