@@ -22,34 +22,36 @@
             background-color: var(--bg-body);
             color: var(--text-main);
             line-height: 1.6;
+            margin: 0;
         }
 
-        nav, .nav-links {
-            display: flex;
-            gap: 2rem;
-        }
         nav {
+            display: flex;
             justify-content: space-around;
             align-items: center;
-            height: 15vh;
+            height: 80px;
             background: rgba(255, 255, 255, 0.8);
             backdrop-filter: blur(10px);
             position: sticky;
             top: 0;
             z-index: 1000;
+            border-bottom: 1px solid var(--border);
         }
+
+        .nav-links { display: flex; gap: 2rem; list-style: none; }
+        .nav-links a { text-decoration: none; color: var(--text-main); font-weight: 500; }
 
         #profile {
             display: flex;
             justify-content: center;
-            gap: 5rem;
-            height: 80vh;
+            gap: 4rem;
+            padding: 100px 10%;
             align-items: center;
         }
         .section_pic-container img {
-            border-radius: 20%; 
+            border-radius: 24px;
             box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
-            width: 300px;
+            width: 320px;
         }
 
         .details-container {
@@ -60,61 +62,51 @@
             transition: transform 0.3s ease, box-shadow 0.3s ease;
             height: 100%;
         }
-        .details-container:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
-        }
 
         .experience-details-container {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2.5rem;
             padding: 2rem 0;
         }
 
-        .skill-list {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.5rem;
-            list-style: none;
-            padding: 0;
-        }
-        .skill-badge {
-            background: #e0f2fe;
-            color: #0369a1;
-            padding: 4px 12px;
-            border-radius: 20px;
-            font-size: 0.85rem;
-            font-weight: 600;
+        /* Skills Layout */
+        .skill-category { margin-bottom: 1rem; }
+        .skill-category strong { color: var(--text-main); font-size: 1.05rem; }
+        .skill-text { color: var(--text-muted); margin-left: 5px; }
+
+        /* Bigger Project Images */
+        .project-img {
+            width: 100%;
+            height: 280px; /* Increased from 200px */
+            object-fit: cover;
+            border-radius: 12px;
+            margin-bottom: 1.5rem;
+            border: 1px solid var(--border);
         }
 
         .btn {
-            padding: 12px 24px;
+            padding: 10px 20px;
             border-radius: 8px;
             font-weight: 600;
             cursor: pointer;
             transition: 0.3s;
+            margin-top: 10px;
         }
         .btn-color-1 { background: var(--primary-color); color: white; border: none; }
         .btn-color-2 { background: transparent; border: 2px solid var(--primary-color); color: var(--primary-color); }
 
-        .project-img {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-            border-radius: 12px;
-            margin-bottom: 1rem;
-        }
-
         .highlight { color: var(--primary-color); font-weight: bold; }
         section { padding: 4rem 10%; }
         .title { font-size: 2.5rem; margin-bottom: 2rem; text-align: center; }
+        
+        #contact { padding-bottom: 2rem; } /* Reduced bottom padding */
     </style>
 </head>
 <body>
 
     <nav id="desktop-nav">
-        <div class="logo">Vatsal Malkari</div>
+        <div class="logo" style="font-weight: 700; font-size: 1.5rem;">Vatsal Malkari</div>
         <ul class="nav-links">
             <li><a href="#about">About</a></li>
             <li><a href="#experience">Experience</a></li>
@@ -137,8 +129,8 @@
                 <button class="btn btn-color-1" onclick="location.href='#contact'">Contact Info</button>
             </div>
             <div id="socials-container" style="margin-top: 1.5rem; display: flex; gap: 1rem;">
-                <img src="./assets/linkedin.png" alt="LinkedIn" class="icon" style="cursor:pointer" onclick="window.open('https://www.linkedin.com/in/vatsal-malkari/')"/>
-                <img src="./assets/github.png" alt="GitHub" class="icon" style="cursor:pointer" onclick="window.open('https://github.com/vatsalmalkari')"/>
+                <img src="./assets/linkedin.png" alt="LinkedIn" class="icon" style="cursor:pointer; width:32px" onclick="window.open('https://www.linkedin.com/in/vatsal-malkari/')"/>
+                <img src="./assets/github.png" alt="GitHub" class="icon" style="cursor:pointer; width:32px" onclick="window.open('https://github.com/vatsalmalkari')"/>
             </div>
         </div>
     </section>
@@ -146,10 +138,9 @@
     <section id="about">
         <h1 class="title">About Me</h1>
         <div class="details-container">
-            <p style="font-size: 1.1rem; text-align: center; max-width: 800px; margin: 0 auto;">
-                I am a recent graduate in <span class="highlight">Computer Science and Data Science</span>, currently pursuing my Master’s in Data Science. 
-                I specialize in building high-performance systems and ML pipelines. From optimizing protein modeling by <span class="highlight">41x</span> to building custom C interpreters, 
-                I value engineering that solves complex, real-world problems.
+            <p style="font-size: 1.1rem; text-align: center; max-width: 850px; margin: 0 auto;">
+                I am a Master’s in Data Science student at Rutgers with a background in Computer Science. 
+                I specialize in high-performance systems and ML pipelines. Whether it's optimizing protein modeling by <span class="highlight">41x</span> or building neural networks from scratch in <span class="highlight">C++</span>, I am driven by engineering efficiency and data-driven impact.
             </p>
         </div>
     </section>
@@ -157,43 +148,26 @@
     <section id="experience">
         <h1 class="title">Experience</h1>
         <div class="details-container">
-            <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+            <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap;">
                 <h3>Extern — NJCCIC via Rutgers MBS</h3>
                 <span class="highlight">Jan 2025 – May 2025</span>
             </div>
             <ul style="margin-top: 1rem;">
                 <li>Built unsupervised anomaly detection models improving threat detection by <span class="highlight">22.4%</span>.</li>
                 <li>Designed scalable pipelines in BigQuery to process <span class="highlight">2M+ weekly login events</span>.</li>
-                <li>Automated threat classification using PCA and vectorized workflows, significantly reducing analyst manual workload.</li>
+                <li>Automated threat classification using PCA and vectorized workflows for state security analysts.</li>
             </ul>
         </div>
     </section>
 
     <section id="skills">
         <h1 class="title">Technical Toolbox</h1>
-        <div class="experience-details-container">
-            <div class="details-container">
-                <h3>Languages & Databases</h3>
-                <ul class="skill-list">
-                    <li class="skill-badge">Python</li><li class="skill-badge">SQL</li><li class="skill-badge">C/C++</li>
-                    <li class="skill-badge">Java</li><li class="skill-badge">JavaScript</li><li class="skill-badge">PostgreSQL</li>
-                    <li class="skill-badge">ChromaDB</li>
-                </ul>
-            </div>
-            <div class="details-container">
-                <h3>AI & Machine Learning</h3>
-                <ul class="skill-list">
-                    <li class="skill-badge">PyTorch</li><li class="skill-badge">TensorFlow</li><li class="skill-badge">Scikit-learn</li>
-                    <li class="skill-badge">RAG</li><li class="skill-badge">CNNs</li><li class="skill-badge">BigQuery ML</li>
-                </ul>
-            </div>
-            <div class="details-container">
-                <h3>Tools & Engineering</h3>
-                <ul class="skill-list">
-                    <li class="skill-badge">Docker</li><li class="skill-badge">Git</li><li class="skill-badge">FastAPI</li>
-                    <li class="skill-badge">Spring Boot</li><li class="skill-badge">CI/CD</li><li class="skill-badge">Multithreading</li>
-                </ul>
-            </div>
+        <div class="details-container">
+            <div class="skill-category"><strong>• Languages:</strong><span class="skill-text">Python, C++, C, Java, SQL, JavaScript</span></div>
+            <div class="skill-category"><strong>• Machine Learning:</strong><span class="skill-text">PyTorch, TensorFlow, Transformers (Hugging Face), OpenCV, Scikit-Learn, Pandas, NumPy</span></div>
+            <div class="skill-category"><strong>• Backend:</strong><span class="skill-text">FastAPI, Flask, Spring Boot, Docker, PostgreSQL, ChromaDB, Git, CI/CD, Django</span></div>
+            <div class="skill-category"><strong>• Systems Engineering:</strong><span class="skill-text">Multithreading (pthreads), Concurrency, Memory Management, OS Scheduling, Linux/Unix</span></div>
+            <div class="skill-category"><strong>• Concepts:</strong><span class="skill-text">Object-Oriented Programming (OOP), Data Structures & Algorithms, REST APIs, System Design, JWT Auth</span></div>
         </div>
     </section>
 
@@ -201,61 +175,51 @@
         <h1 class="title">Featured Projects</h1>
         <div class="experience-details-container">
             <div class="details-container">
+                <img src="./assets/face_expression.png" alt="Face Expression Detector" class="project-img" />
+                <h3>C++ Face Expression Detector</h3>
+                <p>Developed a CNN from scratch in C++ to detect facial expressions via webcam, focusing on high-performance inference without heavy libraries.</p>
+                <button class="btn btn-color-2" onclick="window.open('https://github.com/vatsalmalkari/Cpp-deep-learning-engine')">GitHub</button>
+            </div>
+
+            <div class="details-container">
                 <img src="./assets/bms.png" alt="BMS Project" class="project-img" />
                 <h3>Optimized PTM Engine</h3>
-                <p>Engineered a protein modeling tool that achieved a <span class="highlight">41× speedup</span> in calculations.</p>
-                <button class="btn btn-color-2" onclick="window.open('https://github.com/vatsalmalkari/bms-project')">View Code</button>
+                <p>Engineered a protein modeling tool that achieved a <span class="highlight">41× speedup</span> in calculations using optimized data structures.</p>
+                <button class="btn btn-color-2" onclick="window.open('https://github.com/vatsalmalkari/bms-project')">GitHub</button>
+            </div>
+
+            <div class="details-container">
+                <img src="./assets/task-scheduler.png" alt="Task Scheduler" class="project-img" />
+                <h3>Python Task Scheduler</h3>
+                <p>Built a robust scheduler with multithreading support and persistent storage to automate complex task workflows.</p>
+                <button class="btn btn-color-2" onclick="window.open('https://github.com/vatsalmalkari/task-scheduler')">GitHub</button>
             </div>
 
             <div class="details-container">
                 <img src="./assets/aot-fmab-ai.png" alt="AI Project" class="project-img" />
                 <h3>Anime Script AI (RAG)</h3>
-                <p>Semantic search system using ChromaDB and SentenceTransformers for deep script analysis.</p>
-                <button class="btn btn-color-2" onclick="window.open('https://github.com/vatsalmalkari/aot-fmab-ai')">View Code</button>
-            </div>
-
-            <div class="details-container">
-                <img src="./assets/python_compiler.png" alt="C Interpreter" class="project-img" />
-                <h3>Python Interpreter in C</h3>
-                <p>Built a custom interpreter from scratch featuring memory management and core data structures.</p>
-                <button class="btn btn-color-2" onclick="window.open('https://github.com/vatsalmalkari/python-compiler')">View Code</button>
-            </div>
-
-            </div>
-    </section>
-
-    <section id="leadership">
-        <h1 class="title">Leadership & Service</h1>
-        <div class="experience-details-container">
-            <div class="details-container">
-                <h3>Alpha Phi Omega</h3>
-                <p><strong>Roles:</strong> Webmaster, Alumni Chair, Engagement Committee</p>
-                <p>Managed digital infrastructure and alumni relations for a service-based fraternity.</p>
-            </div>
-            <div class="details-container">
-                <h3>Community Service</h3>
-                <p><strong>Five Loaves Food Pantry:</strong> Regular volunteer managing food distribution logistics.</p>
+                <p>Semantic search system using **ChromaDB** and **SentenceTransformers** for deep script analysis of anime data.</p>
+                <button class="btn btn-color-2" onclick="window.open('https://github.com/vatsalmalkari/aot-fmab-ai')">GitHub</button>
             </div>
         </div>
     </section>
 
-    <section id="education">
-        <h1 class="title">Education</h1>
-        <div class="details-container" style="text-align: center;">
-            <h3>Rutgers University — New Brunswick</h3>
-            <p><strong>M.S. in Data Science</strong> (Expected Dec 2026)</p>
-            <p><strong>B.S. in Computer Science & Data Science</strong> (Graduated May 2025)</p>
+    <section id="current-focus">
+        <h1 class="title">Current Focus</h1>
+        <div class="details-container" style="border: 2px dashed var(--primary-color); background: #f0f9ff;">
+            <h3 style="color: var(--primary-color);">🛰️ Satellite AI Dashboard: Deforestation & Anti-Poaching</h3>
+            <p style="margin-top: 1rem;">Building an interactive tool analyzing **NASA & Google Earth Engine** imagery to detect rainforest loss trends and optimize anti-poaching patrol routes using Geospatial AI.</p>
         </div>
     </section>
 
     <section id="contact">
         <h1 class="title">Get In Touch</h1>
-        <div class="details-container" style="text-align: center;">
+        <div class="details-container" style="text-align: center; max-width: 600px; margin: 0 auto;">
             <p>Email: <a href="mailto:vatsalmalkari@example.com" class="highlight">vatsalmalkari@example.com</a></p>
             <p>Phone: (925) 968-8233</p>
-            <div id="socials-container" style="justify-content: center; display: flex; gap: 1rem; margin-top: 1rem;">
-                <img src="./assets/linkedin.png" alt="LinkedIn" class="icon" onclick="window.open('https://www.linkedin.com/in/vatsal-malkari/')"/>
-                <img src="./assets/github.png" alt="GitHub" class="icon" onclick="window.open('https://github.com/vatsalmalkari')"/>
+            <div id="socials-container" style="justify-content: center; display: flex; gap: 1.5rem; margin-top: 1rem;">
+                <img src="./assets/linkedin.png" alt="LinkedIn" class="icon" style="cursor:pointer; width:30px" onclick="window.open('https://www.linkedin.com/in/vatsal-malkari/')"/>
+                <img src="./assets/github.png" alt="GitHub" class="icon" style="cursor:pointer; width:30px" onclick="window.open('https://github.com/vatsalmalkari')"/>
             </div>
         </div>
     </section>
@@ -268,25 +232,20 @@
                 <span class="skill-badge" style="background: var(--primary-color); color: white;">Active Development</span>
             </div>
             <p style="margin-top: 1.5rem; font-size: 1.1rem;">
-                I am currently developing an interactive AI tool that leverages **NASA and Google Earth Engine API** data to track real-time deforestation trends in the Amazon and Congo basins. 
+                I am currently developing an interactive AI tool that leverages NASA and Google Earth Engine API data to track real-time deforestation trends in the Amazon and Congo rainforests. 
             </p>
             <p style="margin-top: 1rem;">
-                The project focuses on using Computer Vision to create a visual narrative of rainforest loss and identifying high-risk areas to optimize anti-poaching patrol routes. It’s an exploration of how Geospatial AI can drive environmental conservation.
+                The project focuses on using Computer Vision to create a visual narrative of rainforest loss and identifying high-risk areas to optimize anti-poaching patrol routes. It’s an exploration of how AI can drive environmental conservation.
             </p>
             <div class="skill-list" style="margin-top: 1.5rem;">
-                <li class="skill-badge">Google Earth Engine</li>
-                <li class="skill-badge">Satellite Imagery (Remote Sensing)</li>
+                <li class="skill-badge">Google Earth API</li>
+                <li class="skill-badge">Satellite Imagery</li>
                 <li class="skill-badge">Computer Vision</li>
                 <li class="skill-badge">Streamlit / Dash</li>
             </div>
         </div>
     </section>
-
-    <footer style="text-align: center; padding: 2rem; color: var(--text-muted);">
-        <p>&#169; 2025 Vatsal Malkari. Built with precision and code.</p>
-    </footer>
-
-    <footer style="text-align: center; padding: 2rem; color: var(--text-muted);">
+    <footer style="text-align: center; padding: 1.5rem; color: var(--text-muted); border-top: 1px solid var(--border);">
         <p>&#169; 2025 Vatsal Malkari. Built with precision and code.</p>
     </footer>
 
