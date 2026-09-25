@@ -4,155 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vatsal Malkari | Portfolio</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css"/>
-    <link rel="stylesheet" href="mediaqueries.css"/>
-    <style>
-        :root {
-            --primary-color: #0ea5e9;
-            --text-main: #1e293b;
-            --text-muted: #64748b;
-            --bg-card: #ffffff;
-            --bg-body: #f8fafc;
-            --border: #e2e8f0;
-        }
-
-        [data-theme="dark"] {
-            --primary-color: #38bdf8;
-            --text-main: #e5e7eb;
-            --text-muted: #9ca3af;
-            --bg-card: #020617;
-            --bg-body: #020617;
-            --border: #1e293b;
-        }
-
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: var(--bg-body);
-            color: var(--text-main);
-            line-height: 1.6;
-            margin: 0;
-        }
-
-        * {
-            transition: background-color 0.25s ease, color 0.25s ease, border-color 0.25s ease;
-        }
-
-        nav {
-            display: flex;
-            justify-content: space-around;
-            align-items: center;
-            height: 80px;
-            background: var(--bg-body);
-            backdrop-filter: blur(10px);
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            border-bottom: 1px solid var(--border);
-        }
-
-
-        .nav-links { display: flex; gap: 2rem; list-style: none; }
-        .nav-links a { text-decoration: none; color: var(--text-main); font-weight: 500; }
-
-        #profile {
-            display: flex;
-            justify-content: center;
-            gap: 4rem;
-            padding: 100px 10%;
-            align-items: center;
-        }
-        .section_pic-container img {
-            border-radius: 24px;
-            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
-            width: 320px;
-        }
-
-        .details-container {
-            background: var(--bg-card);
-            border: 1px solid var(--border);
-            border-radius: 16px;
-            padding: 2rem;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            height: 100%;
-        }
-
-        .experience-details-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 2.5rem;
-            padding: 2rem 0;
-        }
-
-        .skill-category { margin-bottom: 1rem; }
-        .skill-category strong { color: var(--text-main); font-size: 1.05rem; }
-        .skill-text { color: var(--text-muted); margin-left: 5px; }
-
-        .project-img {
-            width: 100%;
-            height: 280px; 
-            object-fit: cover;
-            border-radius: 12px;
-            margin-bottom: 1.5rem;
-            border: 1px solid var(--border);
-        }
-
-        .btn {
-            padding: 10px 20px;
-            border-radius: 8px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: 0.3s;
-            margin-top: 10px;
-        }
-        .btn-color-1 { background: var(--primary-color); color: white; border: none; }
-        .btn-color-2 { background: transparent; border: 2px solid var(--primary-color); color: var(--primary-color); }
-
-        .highlight { color: var(--primary-color); font-weight: bold; }
-        section { padding: 4rem 10%; }
-        .title { font-size: 2.5rem; margin-bottom: 2rem; text-align: center; }
-        
-        #contact { padding-bottom: 2rem; } 
-    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="mediaqueries.css">
 </head>
+<body>
 
-    <script>
-        document.addEventListener("DOMContentLoaded", () => {
-            const toggleBtn = document.getElementById("theme-toggle");
-            const root = document.documentElement;
-
-            const savedTheme = localStorage.getItem("theme");
-            const systemDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
-
-            if (savedTheme) {
-                root.setAttribute("data-theme", savedTheme);
-            } else if (systemDark) {
-                root.setAttribute("data-theme", "dark");
-            }
-
-            updateIcon();
-
-            toggleBtn.addEventListener("click", () => {
-                const isDark = root.getAttribute("data-theme") === "dark";
-                root.setAttribute("data-theme", isDark ? "light" : "dark");
-                localStorage.setItem("theme", isDark ? "light" : "dark");
-                updateIcon();
-            });
-
-            function updateIcon() {
-                toggleBtn.textContent =
-                    root.getAttribute("data-theme") === "dark" ? "☀️" : "🌙";
-            }
-        });
-    </script>
-
-
-    <body>
+    <!-- NAVIGATION -->
     <nav id="desktop-nav">
-        <div class="logo" style="font-weight: 700; font-size: 1.5rem;">
-            Vatsal Malkari
-        </div>
-
+        <div class="logo">Vatsal Malkari</div>
         <ul class="nav-links">
             <li><a href="#about">About</a></li>
             <li><a href="#experience">Experience</a></li>
@@ -160,212 +20,368 @@
             <li><a href="#skills">Skills</a></li>
             <li><a href="#contact">Contact</a></li>
         </ul>
-
-        <button
-            id="theme-toggle"
-            aria-label="Toggle Dark Mode"
-            style="
-                background: none;
-                border: 1px solid var(--border);
-                border-radius: 8px;
-                padding: 6px 10px;
-                cursor: pointer;
-                font-size: 1rem;
-            "
-        >
-            🌙
-        </button>
+        <button id="theme-toggle" aria-label="Toggle Dark Mode">🌙</button>
     </nav>
 
-    <section id="profile">
-        <div class="section_pic-container">
-            <img src="./assets/okpic.png" loading="lazy" alt="Vatsal Malkari">
-        </div>
-        <div class="section_text">
-            <p style="font-weight: 600; color: var(--text-muted);">Hello, I'm</p>
-            <h1 class="title" style="text-align: left; margin-bottom: 0.5rem;">Vatsal Malkari</h1>
-            <p style="font-size: 1.25rem; margin-bottom: 1.5rem;">Computer Science & Data Science @ Rutgers University</p>
-            <div class="btn-container">
-                <button class="btn btn-color-2" onclick="window.open('./assets/vatsal_malkari_resume.pdf')">Download CV</button>
-                <button class="btn btn-color-1" onclick="location.href='#contact'">Contact Info</button>
+    <!-- HAMBURGER NAV (Mobile) -->
+    <nav id="hamburger-nav">
+        <div class="logo">Vatsal Malkari</div>
+        <div class="hamburger-menu">
+            <div class="hamburger-icon" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
             </div>
-            <div id="socials-container" style="margin-top: 1.5rem; display: flex; gap: 1rem;">
-                <img src="./assets/linkedin.png" loading="lazy" alt="LinkedIn" class="icon" style="cursor:pointer; width:32px" onclick="window.open('https://www.linkedin.com/in/vatsal-malkari/')"/>
-                <img src="./assets/github.png" loading="lazy" alt="GitHub" class="icon" style="cursor:pointer; width:32px" onclick="window.open('https://github.com/vatsalmalkari')"/>
-            </div>
-        </div>
-    </section>
-
-    <section id="about">
-        <h1 class="title">About Me</h1>
-        <div class="details-container">
-            <p style="font-size: 1.1rem; text-align: center; max-width: 850px; margin: 0 auto;">
-    I’m a current Data Science graduate student at Rutgers with a background in Computer Science, focused on building 
-    <span class="highlight">high-performance systems</span> and 
-    <span class="highlight">scalable ML pipelines</span>.
-    I enjoy working close to the metal—whether that means optimizing protein modeling by 
-    <span class="highlight">41×</span>, implementing neural networks from scratch in 
-    <span class="highlight">C++</span>, or designing data pipelines that operate reliably at scale.
-</p>
-
-        </div>
-    </section>
-
-    <section id="experience">
-        <h1 class="title">Experience</h1>
-        <div class="details-container">
-            <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap;">
-                <h3>New Jersey Cybersecurity and Communications Integration Cell</h3>
-                <h3>Data Engineering Extern</h3>
-                <span class="highlight">Jan 2025 – May 2025</span>
-            </div>
-            <ul style="margin-top: 1rem;">
-                <li>Built a scalable data pipeline processing <span class="highlight">2M+</span> weekly login events to identify top <span class="highlight">1%</span> highest-risk accounts.</li>
-                <li>Implemented anomaly detection in BigQuery ML, improving threat detection accuracy by <span class="highlight">22.4%</span>.</li>
-                <li>Automated threat classification using PCA and vectorized workflows, reducing analyst investigation time.</li>
+            <ul class="menu-links">
+                <li><a href="#about" onclick="toggleMenu()">About</a></li>
+                <li><a href="#experience" onclick="toggleMenu()">Experience</a></li>
+                <li><a href="#projects" onclick="toggleMenu()">Projects</a></li>
+                <li><a href="#skills" onclick="toggleMenu()">Skills</a></li>
+                <li><a href="#contact" onclick="toggleMenu()">Contact</a></li>
             </ul>
         </div>
+        <button id="theme-toggle-mobile" aria-label="Toggle Dark Mode">🌙</button>
+    </nav>
+
+    <!-- PROFILE -->
+    <section id="profile">
+        <div class="section__pic-container">
+            <img src="./assets/okpic.png" alt="Vatsal Malkari" loading="lazy">
+        </div>
+        <div class="section__text">
+            <p class="section__text__p1">Hello, I'm</p>
+            <h1 class="title">Vatsal Malkari</h1>
+            <p class="section__text__p2">Data Science Graduate Student @ Rutgers University</p>
+            <div class="btn-container">
+                <button class="btn btn-color-2" onclick="window.open('./assets/vatsal_resume.pdf')">
+                    Download CV
+                </button>
+                <button class="btn btn-color-1" onclick="location.href='#contact'">
+                    Contact Info
+                </button>
+            </div>
+            <div id="socials-container">
+                <img src="./assets/linkedin.png" alt="LinkedIn" class="icon"
+                     onclick="window.open('https://www.linkedin.com/in/vatsal-malkari/')">
+                <img src="./assets/github.png" alt="GitHub" class="icon"
+                     onclick="window.open('https://github.com/vatsalmalkari')">
+            </div>
+        </div>
     </section>
 
-    <section id="skills">
-        <h1 class="title">Technical Toolbox</h1>
-        <div class="details-container">
-            <div class="skill-category">
-    <strong>Core Languages:</strong>
-    <span class="skill-text">Python, C++, C, Java, SQL, JavaScript</span>
-</div>
+    <!-- ABOUT -->
+    <section id="about">
+        <p class="section__text__p1">Get To Know More</p>
+        <h1 class="title">About Me</h1>
+        <div class="about-container">
+            <div class="details-container">
+                <p class="about-text">
+                    I'm a Data Science graduate student at Rutgers with a background in Computer Science,
+                    focused on building <span class="highlight">high-performance systems</span> and
+                    <span class="highlight">scalable ML pipelines</span>.
+                    I enjoy working close to the metal—whether that means optimizing protein modeling by
+                    <span class="highlight">41×</span>, implementing neural networks from scratch in
+                    <span class="highlight">C++</span>, designing data pipelines that operate reliably at scale,
+                    or building <span class="highlight">distributed systems in Java</span> that stay consistent
+                    under fire.
+                </p>
+            </div>
+        </div>
+    </section>
 
-<div class="skill-category">
-    <strong>Machine Learning & Data:</strong>
-    <span class="skill-text">
-        PyTorch, TensorFlow, Hugging Face Transformers, Scikit-Learn,
-        Pandas, NumPy, OpenCV
-    </span>
-</div>
+    <!-- EXPERIENCE -->
+    <section id="experience">
+        <p class="section__text__p1">Explore My</p>
+        <h1 class="title">Experience</h1>
+        <div class="experience-details-container">
 
-<div class="skill-category">
-    <strong>Backend & Infrastructure:</strong>
-    <span class="skill-text">
-        FastAPI, Flask, Django, Spring Boot,
-        PostgreSQL, Docker, Git, CI/CD, ChromaDB
-    </span>
-</div>
+            <div class="details-container experience-card">
+                <div class="exp-header">
+                    <div>
+                        <h3>Nokia Bell Labs</h3>
+                        <p class="exp-role">Software Verification Engineer Co-op</p>
+                    </div>
+                    <span class="exp-date">May 2026 – Aug 2026</span>
+                </div>
+                <ul class="exp-list">
+                    <li>Reverse engineered REST API specs with cross-functional teams to build an isolated simulator, enabling safe testing without risking production hardware.</li>
+                    <li>Scripted Python and Shell tools to parse REST JSON payloads for node setup and IP allocation, reducing manual setup time from <span class="highlight">4+ hours to under 30 minutes</span>.</li>
+                    <li>Engineered helper tools and workflow pipelines enabling AI agents to execute network creation, link updates, and fault injections via natural language.</li>
+                    <li>Containerized backend automation logic with <span class="highlight">Docker</span> for reproducible test execution and developer onboarding.</li>
+                </ul>
+            </div>
 
-<div class="skill-category">
-    <strong>Systems & Low-Level:</strong>
-    <span class="skill-text">
-        Multithreading (pthreads), Concurrency,
-        Memory Management, OS Scheduling, Linux/Unix
-    </span>
-</div>
-
-<div class="skill-category">
-    <strong>Core CS Foundations:</strong>
-    <span class="skill-text">
-        Data Structures & Algorithms, Object-Oriented Programming,
-        REST APIs, System Design, Authentication (JWT)
-    </span>
-</div>
+            <div class="details-container experience-card">
+                <div class="exp-header">
+                    <div>
+                        <h3>NJ Cybersecurity & Communications Integration Cell</h3>
+                        <p class="exp-role">Data Engineering Extern</p>
+                    </div>
+                    <span class="exp-date">Jan 2025 – May 2025</span>
+                </div>
+                <ul class="exp-list">
+                    <li>Built a scalable pipeline on Google Cloud Platform processing <span class="highlight">2M+ weekly login events</span> to identify top 1% high-risk accounts.</li>
+                    <li>Implemented anomaly detection in BigQuery ML, improving threat detection accuracy by <span class="highlight">22%</span>.</li>
+                    <li>Automated threat classification using PCA and vectorized workflows, reducing analyst time.</li>
+                </ul>
+            </div>
 
         </div>
     </section>
 
+    <!-- PROJECTS -->
     <section id="projects">
+        <p class="section__text__p1">Browse My Recent</p>
         <h1 class="title">Featured Projects</h1>
         <div class="experience-details-container">
-            <div class="details-container">
-                <img src="./assets/face_expression.png" loading="lazy" alt="Face Expression Detector" class="project-img" />
-                <h3>C++ Face Expression Detector</h3>
-                <p> Built to understand how modern deep learning frameworks work under the hood, I implemented a CNN entirely in C++ for real-time facial expression detection, focusing on efficient memory usage and fast inference without heavy ML libraries.</p>
-                <button class="btn btn-color-2" onclick="window.open('https://github.com/vatsalmalkari/Cpp-deep-learning-engine')">GitHub</button>
+
+            <!-- PSS Telecom Network Simulator -->
+            <div class="details-container color-container">
+                <div class="article-container">
+                    <figure class="project-figure">
+                        <img src="./assets/bms.png"
+                             alt="Optical transponder simulator API interface"
+                             class="project-img gallery-thumb"
+                             onclick="openLightbox(this.src)">
+                        <figcaption>Simulator API — add links, inject faults, observe packet flow</figcaption>
+                    </figure>
+                </div>
+                <h2 class="project-title">PSS Telecom Network Simulator</h2>
+                <p class="project-desc">
+                    C++ discrete event engine processing <span class="highlight">1.36M events/sec</span> with Dijkstra routing,
+                    1+1 protection switching, and lock-free concurrency. Deployed via Flask REST API + SQLite + Docker/Kubernetes,
+                    scaling to 10K services in a <span class="highlight">43.8MB memory footprint</span>.
+                </p>
+                <div class="btn-container">
+                    <button class="btn btn-color-2 project-btn"
+                            onclick="window.open('https://github.com/vatsalmalkari')">GitHub</button>
+                </div>
             </div>
 
-            <div class="details-container">
-                <img src="./assets/bms.png" loading="lazy" alt="BMS Project" class="project-img" />
-                <h3>Optimized PTM Engine</h3>
-                <p> Designed a protein modeling engine to explore performance-oriented data structures, achieving a <span class="highlight">41× speedup</span> in computational output compared to baseline implementations.</p>
-                <button class="btn btn-color-2" onclick="window.open('https://github.com/vatsalmalkari/bms-project')">GitHub</button>
+            <!-- Custom C++ Deep Learning Engine (2 images) -->
+            <div class="details-container color-container">
+                <div class="article-container project-gallery">
+                    <figure class="project-figure">
+                        <img src="./assets/face_expression.png"
+                             alt="Live webcam facial expression detection running on the C++ engine"
+                             class="project-img gallery-thumb"
+                             onclick="openLightbox(this.src)">
+                        <figcaption>Real-time webcam inference — expression classified in &lt;100ms</figcaption>
+                    </figure>
+                    <figure class="project-figure">
+                        <img src="./assets/cnn_trace.png"
+                             alt="Apple Instruments profiler trace of CNN training"
+                             class="project-img gallery-thumb"
+                             onclick="openLightbox(this.src)">
+                        <figcaption>Instruments trace — 43.9% in <code>Tensor::backward</code>, near-zero <code>malloc</code></figcaption>
+                    </figure>
+                </div>
+                <h2 class="project-title">Custom C++ Deep Learning Engine</h2>
+                <p class="project-desc">
+                    Framework-free engine with a custom DAG Autograd graph for backpropagation.
+                    Bitwise-aligned Memory Arena reducing OS heap allocation to <span class="highlight">&lt;0.1%</span> of thread runtime.
+                    Real-time webcam inference in under <span class="highlight">100ms</span>.
+                </p>
+                <div class="btn-container">
+                    <button class="btn btn-color-2 project-btn"
+                            onclick="window.open('https://github.com/vatsalmalkari/Cpp-deep-learning-engine')">GitHub</button>
+                </div>
             </div>
 
-            <div class="details-container">
-                <img src="./assets/python_compiler.png" loading="lazy" alt="Python Compiler" class="project-img" />
-                <h3>Python Compiler using C</h3>
-                <p>Built to understand language internals, this project implements a simplified Python compiler in C, covering lexical analysis, parsing, and execution for core data structures and control flow.</p>
-                <button class="btn btn-color-2" onclick="window.open('https://github.com/vatsalmalkari/python-compiler')">GitHub</button>
+            <!-- Python Interpreter in C -->
+            <div class="details-container color-container">
+                <div class="article-container">
+                    <figure class="project-figure">
+                        <img src="./assets/python_compiler.png"
+                             alt="Terminal running Python code through the custom C interpreter"
+                             class="project-img gallery-thumb"
+                             onclick="openLightbox(this.src)">
+                        <figcaption>Runs Python in-terminal — no CPython, no environment, no dependencies</figcaption>
+                    </figure>
+                </div>
+                <h2 class="project-title">Python Interpreter in C</h2>
+                <p class="project-desc">
+                    Core compiler components (tokenizer, parser, evaluator) with security-first design:
+                    bounds checking on all buffers, reference counting, input validation.
+                    <span class="highlight">Zero buffer overflows</span>, zero memory leaks across 40+ tests.
+                </p>
+                <div class="btn-container">
+                    <button class="btn btn-color-2 project-btn"
+                            onclick="window.open('https://github.com/vatsalmalkari/python-compiler')">GitHub</button>
+                </div>
             </div>
 
-            <div class="details-container">
-                <img src="./assets/task-scheduler.png" loading="lazy" alt="Task Scheduler" class="project-img" />
-                <h3>Python Task Scheduler</h3>
-                <p>Developed a multithreaded task scheduler to explore concurrency, synchronization, and persistent job execution in real-world automation workflows.</p>
-                <button class="btn btn-color-2" onclick="window.open('https://github.com/vatsalmalkari/task-scheduler')">GitHub</button>
+            <!-- Low-Level Task Scheduler -->
+            <div class="details-container color-container">
+                <div class="article-container">
+                    <figure class="project-figure">
+                        <img src="./assets/task-scheduler.png"
+                             alt="Multiple scheduled tasks executing concurrently"
+                             class="project-img gallery-thumb"
+                             onclick="openLightbox(this.src)">
+                        <figcaption>Concurrent execution — Min Heap scheduling with pthread sync primitives</figcaption>
+                    </figure>
+                </div>
+                <h2 class="project-title">Low-Level Task Scheduler</h2>
+                <p class="project-desc">
+                    C scheduler using Min Heap + Hash Map for <span class="highlight">O(log N)</span> scheduling and
+                    <span class="highlight">O(1)</span> cancellation. Replaced busy-waiting with pthread condition variables.
+                    Stress-tested with 2,000 concurrent tasks.
+                </p>
+                <div class="btn-container">
+                    <button class="btn btn-color-2 project-btn"
+                            onclick="window.open('https://github.com/vatsalmalkari/task-scheduler')">GitHub</button>
+                </div>
             </div>
 
-            <div class="details-container">
-                <img src="./assets/aot-fmab-ai.png" loading="lazy" alt="AI Project" class="project-img" />
-                <h3>Anime Script AI (RAG)</h3>
-                <p>Built a semantic search and RAG system using ChromaDB and SentenceTransformers, enabling contextual querying and deep analysis of large anime script datasets.</p>
-                <button class="btn btn-color-2" onclick="window.open('https://github.com/vatsalmalkari/aot_fmab_jjk_ai')">GitHub</button>
+            <!-- Anime Script AI (RAG) -->
+            <div class="details-container color-container">
+                <div class="article-container">
+                    <figure class="project-figure">
+                        <img src="./assets/aot-fmab-ai.png"
+                             alt="RAG query interface showing an LLM response grounded in retrieved anime script data"
+                             class="project-img gallery-thumb"
+                             onclick="openLightbox(this.src)">
+                        <figcaption>Retrieval-augmented query — LLM grounded in embedded AoT &amp; FMAB scripts</figcaption>
+                    </figure>
+                </div>
+                <h2 class="project-title">Anime Script AI (RAG)</h2>
+                <p class="project-desc">
+                    Semantic search and RAG system using ChromaDB and SentenceTransformers,
+                    enabling contextual querying and deep analysis of large anime script datasets.
+                </p>
+                <div class="btn-container">
+                    <button class="btn btn-color-2 project-btn"
+                            onclick="window.open('https://github.com/vatsalmalkari/aot_fmab_jjk_ai')">GitHub</button>
+                </div>
             </div>
+
         </div>
     </section>
 
-        <section id="current-focus">
+    <!-- CURRENT FOCUS -->
+    <section id="current-focus">
+        <p class="section__text__p1">What I'm Building Now</p>
         <h1 class="title">Current Focus</h1>
-        <div class="details-container" style="border: 2px dashed var(--primary-color); background: #f0f9ff;">
-            <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;">
-                <h3 style="color: var(--primary-color); margin: 0;">🛰️ Satellite AI Dashboard: Deforestation & Anti-Poaching</h3>
-                <span class="skill-badge" style="background: var(--primary-color); color: white;">Active Development</span>
+        <div class="details-container focus-card">
+            <div class="focus-header">
+                <h3>🏀 Distributed In-Memory Live NBA Box-Score & Telemetry Engine</h3>
+                <span class="badge">Active Development</span>
             </div>
-            <p style="margin-top: 1.5rem; font-size: 1.1rem;">
-                I am currently developing an interactive AI tool that leverages NASA and Google Earth Engine API data to track real-time deforestation trends in the Amazon and Congo rainforests. 
+            <p>
+                A strongly consistent, distributed engine designed to ingest a massive, rapid-fire stream of
+                play-by-play events from live basketball games and instantly replicate updated player stats
+                across a server cluster — with no lag and no dropped events.
             </p>
-            <p style="margin-top: 1rem;">
-                The project focuses on using Computer Vision to create a visual narrative of rainforest loss and identifying high-risk areas to optimize anti-poaching patrol routes. It’s an exploration of how AI can drive environmental conservation.
+            <p>
+                Built from scratch in <span class="highlight">Java 21+</span>, the system leverages
+                <span class="highlight">Virtual Threads</span> to handle thousands of concurrent client
+                score-pull requests, a custom <span class="highlight">Raft consensus protocol</span> over
+                <span class="highlight">gRPC</span> for node-to-node replication, and
+                <span class="highlight">off-heap Direct ByteBuffers</span> to eliminate GC pauses during
+                rapid multi-player statistical updates.
             </p>
-            <div class="skill-list" style="margin-top: 1.5rem;">
-                <li class="skill-badge">Google Earth API</li>
-                <li class="skill-badge">Satellite Imagery</li>
-                <li class="skill-badge">Computer Vision</li>
-                <li class="skill-badge">Streamlit / Dash</li>
-            </div>
-        </div>
-    </section>
-
-    <section id="contact" style="padding-top: 2rem; padding-bottom: 2rem;">
-        <h1 class="title">Get In Touch</h1>
-        <div class="details-container" style="
-            text-align: center; 
-            max-width: 400px; 
-            margin: 0 auto; 
-            padding: 1.5rem; 
-            font-size: 1.1rem;
-            letter-spacing: 0.5px; 
-        ">
-            <p style="margin-bottom: 0.5rem; font-weight: 500;">
-                Email: <a href="mailto:vatsalmalkari@gmail.com" class="highlight" style="text-decoration: none;">vatsalmalkari@gmail.com</a>
-            </p>
-            <p style="margin-bottom: 1rem; font-weight: 500;">
-                Phone: <span style="color: var(--text-main);">(925) 968-8233</span>
-            </p>
-            
-            <div id="socials-container" style="
-                justify-content: center; 
-                display: flex; 
-                gap: 2rem; 
-                margin-top: 0.5rem;
-                padding-top: 0.5rem;
-                border-top: 1px solid var(--border);
-            ">
-                <img src="./assets/linkedin.png" loading="lazy" alt="LinkedIn" class="icon" style="cursor:pointer; width:28px; transition: 0.3s;" onclick="window.open('https://www.linkedin.com/in/vatsal-malkari/')"/>
-                <img src="./assets/github.png" loading="lazy" alt="GitHub" class="icon" style="cursor:pointer; width:28px; transition: 0.3s;" onclick="window.open('https://github.com/vatsalmalkari')"/>
+            <div class="badge-list">
+                <span class="badge">Java 21</span>
+                <span class="badge">Virtual Threads</span>
+                <span class="badge">Netty</span>
+                <span class="badge">Raft Consensus</span>
+                <span class="badge">gRPC</span>
+                <span class="badge">Direct ByteBuffers</span>
+                <span class="badge">Distributed Systems</span>
             </div>
         </div>
     </section>
 
-    <footer style="text-align: center; padding: 1.5rem; color: var(--text-muted); border-top: 1px solid var(--border);">
-        <p>&#169; 2025 Vatsal Malkari. Built with precision and code.</p>
+    <!-- SKILLS -->
+    <section id="skills">
+        <p class="section__text__p1">Explore My</p>
+        <h1 class="title">Technical Toolbox</h1>
+        <div class="skills-wrapper">
+
+            <div class="skill-category">
+                <h3>Core Languages</h3>
+                <ul>
+                    <li>C++</li><li>Python</li><li>C</li><li>Java</li>
+                    <li>SQL</li><li>JavaScript</li><li>Shell</li>
+                </ul>
+            </div>
+
+            <div class="skill-category">
+                <h3>ML & Data</h3>
+                <ul>
+                    <li>PyTorch</li><li>TensorFlow</li><li>Hugging Face</li>
+                    <li>Scikit-Learn</li><li>Pandas / NumPy</li>
+                    <li>OpenCV</li><li>BigQuery ML</li>
+                </ul>
+            </div>
+
+            <div class="skill-category">
+                <h3>Backend & Infra</h3>
+                <ul>
+                    <li>FastAPI / Flask</li><li>Django</li><li>Spring Boot</li>
+                    <li>PostgreSQL</li><li>Docker</li><li>Kubernetes</li>
+                    <li>Git / CI-CD</li><li>ChromaDB</li>
+                </ul>
+            </div>
+
+            <div class="skill-category">
+                <h3>Systems & Low-Level</h3>
+                <ul>
+                    <li>Multithreading (pthreads)</li>
+                    <li>Lock-free Programming</li>
+                    <li>Memory Management</li>
+                    <li>OS Scheduling</li>
+                    <li>Linux / Unix</li>
+                </ul>
+            </div>
+
+            <div class="skill-category">
+                <h3>CS Foundations</h3>
+                <ul>
+                    <li>Data Structures & Algorithms</li>
+                    <li>Object-Oriented Programming</li>
+                    <li>REST APIs</li>
+                    <li>System Design</li>
+                    <li>Authentication (JWT)</li>
+                </ul>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact">
+        <p class="section__text__p1">Get In Touch</p>
+        <h1 class="title">Contact Me</h1>
+        <div class="contact-info-upper-container">
+            <div class="contact-info-container">
+                <p>
+                    <a href="mailto:vatsalmalkari@gmail.com">vatsalmalkari@gmail.com</a>
+                </p>
+            </div>
+            <div class="contact-info-container">
+                <p>(925) 968-8233</p>
+            </div>
+            <div class="contact-info-container">
+                <img src="./assets/linkedin.png" alt="LinkedIn" class="icon contact-icon"
+                     onclick="window.open('https://www.linkedin.com/in/vatsal-malkari/')">
+                <img src="./assets/github.png" alt="GitHub" class="icon contact-icon"
+                     onclick="window.open('https://github.com/vatsalmalkari')">
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&#169; 2026 Vatsal Malkari. Built with precision and code.</p>
     </footer>
 
+    <!-- LIGHTBOX -->
+    <div id="lightbox" class="lightbox" onclick="closeLightbox()">
+        <span class="lightbox-close">&times;</span>
+        <img id="lightbox-img" src="" alt="Expanded view">
+    </div>
+
+    <script src="script.js"></script>
 </body>
 </html>
