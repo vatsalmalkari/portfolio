@@ -3,385 +3,229 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vatsal Malkari | Portfolio</title>
+    <title>Vatsal Malkari | Data Science & Computer Sciencce</title>
+    <meta name="description" content="Vatsal Malkari, Data Science graduate student at Rutgers. Building high-performance systems, ML pipelines, and distributed engines.">
+
+    <meta property="og:title" content="Vatsal Malkari | Portfolio">
+    <meta property="og:description" content="High-performance systems and scalable ML pipelines.">
+    <meta property="og:image" content="./assets/okpic.png">
+    <meta property="og:type" content="website">
+
+    <script>
+        (function () {
+            var t = localStorage.getItem("theme");
+            if (!t) t = matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+            document.documentElement.setAttribute("data-theme", t);
+            var f = localStorage.getItem("font");
+            if (f) document.documentElement.setAttribute("data-font", f);
+            var c = localStorage.getItem("accent");
+            if (c) document.documentElement.style.setProperty("--primary-color", c);
+        })();
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="mediaqueries.css">
 </head>
 <body>
 
-    <!-- NAVIGATION -->
-    <nav id="desktop-nav">
-        <div class="logo">Vatsal Malkari</div>
-        <ul class="nav-links">
-            <li><a href="#about">About</a></li>
-            <li><a href="#experience">Experience</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#skills">Skills</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
-        <button id="theme-toggle" aria-label="Toggle Dark Mode">🌙</button>
-    </nav>
+    <a class="skip-link" href="#profile">Skip to content</a>
 
-    <!-- HAMBURGER NAV (Mobile) -->
-    <nav id="hamburger-nav">
-        <div class="logo">Vatsal Malkari</div>
-        <div class="hamburger-menu">
-            <div class="hamburger-icon" onclick="toggleMenu()">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-            <ul class="menu-links">
-                <li><a href="#about" onclick="toggleMenu()">About</a></li>
-                <li><a href="#experience" onclick="toggleMenu()">Experience</a></li>
-                <li><a href="#projects" onclick="toggleMenu()">Projects</a></li>
-                <li><a href="#skills" onclick="toggleMenu()">Skills</a></li>
-                <li><a href="#contact" onclick="toggleMenu()">Contact</a></li>
+    <div id="progress-bar" aria-hidden="true"></div>
+
+    <header class="site-header">
+        <nav class="nav" aria-label="Main">
+            <a class="logo" href="#profile">Vatsal Malkari</a>
+
+            <ul class="nav-links" id="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#focus">Current Focus</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#contact">Contact</a></li>
             </ul>
-        </div>
-        <button id="theme-toggle-mobile" aria-label="Toggle Dark Mode">🌙</button>
-    </nav>
 
-    <!-- PROFILE -->
-    <section id="profile">
-        <div class="section__pic-container">
-            <img src="./assets/okpic.png" alt="Vatsal Malkari" loading="lazy">
-        </div>
-        <div class="section__text">
-            <p class="section__text__p1">Hello, I'm</p>
-            <h1 class="title">Vatsal Malkari</h1>
-            <p class="section__text__p2">Data Science Graduate Student @ Rutgers University</p>
-            <div class="btn-container">
-                <button class="btn btn-color-2" onclick="window.open('./assets/vatsal_resume.pdf')">
-                    Download CV
+            <div class="nav-actions">
+                <button id="theme-toggle" class="icon-btn" aria-label="Switch to dark mode">
+                    <span aria-hidden="true">🌙</span>
                 </button>
-                <button class="btn btn-color-1" onclick="location.href='#contact'">
-                    Contact Info
+                <button id="menu-toggle" class="icon-btn menu-btn" aria-label="Open menu"
+                        aria-expanded="false" aria-controls="nav-links">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
                 </button>
             </div>
-            <div id="socials-container">
-                <img src="./assets/linkedin.png" alt="LinkedIn" class="icon"
-                     onclick="window.open('https://www.linkedin.com/in/vatsal-malkari/')">
-                <img src="./assets/github.png" alt="GitHub" class="icon"
-                     onclick="window.open('https://github.com/vatsalmalkari')">
-            </div>
-        </div>
-    </section>
+        </nav>
+    </header>
 
-    <!-- ABOUT -->
-    <section id="about">
-        <p class="section__text__p1">Get To Know More</p>
-        <h1 class="title">About Me</h1>
-        <div class="about-container">
-            <div class="details-container">
+    <main>
+
+        <section id="profile" class="hero">
+            <div class="hero-pic">
+                <img src="./assets/okpic.png" alt="Portrait of Vatsal Malkari" width="320" height="320">
+            </div>
+
+            <div class="hero-text">
+                <p class="eyebrow">Data Science M.S. student @ Rutgers University</p>
+                <h1 class="title">I build fast, reliable systems and ML pipelines.</h1>
+                <p class="lead">
+                    Optimized protein modeling <span class="highlight">41×</span>, shipped a simulator
+                    processing <span class="highlight">1.36M events/sec</span>, and built a pipeline for
+                    <span class="highlight">2M+ weekly login events</span>.
+                </p>
+
+                <p class="availability">
+                    <span class="dot" aria-hidden="true"></span>
+                    Open to full-time <span id="role-label">ML &amp; backend</span> roles from May 2027 onwards.
+                </p>
+
+                <div class="btn-container">
+                    <a class="btn btn-primary" href="./assets/vatsal_resume.pdf" download>Download CV</a>
+                    <a class="btn btn-outline" href="#projects">View Projects</a>
+                </div>
+
+                <div class="socials" id="socials">
+                    <a href="mailto:vatsalmalkari@gmail.com" class="social-link">vatsalmalkari@gmail.com</a>
+                    <a href="https://www.linkedin.com/in/vatsal-malkari/" target="_blank" rel="noopener"
+                       aria-label="LinkedIn profile">
+                        <img src="./assets/linkedin.png" alt="" class="icon">
+                    </a>
+                    <a href="https://github.com/vatsalmalkari" target="_blank" rel="noopener"
+                       aria-label="GitHub profile">
+                        <img src="./assets/github.png" alt="" class="icon">
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section class="metrics" aria-label="Key metrics">
+            <div class="metric">
+                <span class="metric-value" data-count="1.36" data-decimals="2" data-suffix="M">1.36M</span>
+                <span class="metric-label">events/sec, PSS simulator</span>
+            </div>
+            <div class="metric">
+                <span class="metric-value" data-count="41" data-suffix="×">41×</span>
+                <span class="metric-label">speedup, protein modeling</span>
+            </div>
+            <div class="metric">
+                <span class="metric-value" data-count="22" data-suffix="%">22%</span>
+                <span class="metric-label">better threat detection</span>
+            </div>
+            <div class="metric">
+                <span class="metric-value" data-count="2" data-suffix="M+">2M+</span>
+                <span class="metric-label">weekly login events processed</span>
+            </div>
+        </section>
+
+        <section id="about" class="about">
+            <p class="eyebrow centered">Get to know me</p>
+            <h2 class="title">About Me</h2>
+            <div class="card about-card">
+                <p class="summary">
+                    <strong>In short:</strong> I build systems that stay fast and correct under load, from
+                    C++ engines and Java distributed services to cloud data pipelines.
+                </p>
                 <p class="about-text">
                     I'm a Data Science graduate student at Rutgers with a background in Computer Science,
                     focused on building <span class="highlight">high-performance systems</span> and
-                    <span class="highlight">scalable ML pipelines</span>.
-                    I enjoy working close to the metal—whether that means optimizing protein modeling by
-                    <span class="highlight">41×</span>, implementing neural networks from scratch in
-                    <span class="highlight">C++</span>, designing data pipelines that operate reliably at scale,
-                    or building <span class="highlight">distributed systems in Java</span> that stay consistent
-                    under fire.
+                    <span class="highlight">scalable ML pipelines</span>. I enjoy working close to the
+                    metal, whether that means implementing neural networks from scratch in
+                    <span class="highlight">C++</span> or building
+                    <span class="highlight">distributed systems in Java</span> that stay consistent under load.
                 </p>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- EXPERIENCE -->
-    <section id="experience">
-        <p class="section__text__p1">Explore My</p>
-        <h1 class="title">Experience</h1>
-        <div class="experience-details-container">
+        <section id="experience">
+            <p class="eyebrow centered">Explore my</p>
+            <h2 class="title">Experience</h2>
+            <div id="experience-list" class="grid experience-grid"></div>
+        </section>
 
-            <div class="details-container experience-card">
-                <div class="exp-header">
-                    <div>
-                        <h3>Nokia Bell Labs</h3>
-                        <p class="exp-role">Software Verification Engineer Co-op</p>
-                    </div>
-                    <span class="exp-date">May 2026 – Aug 2026</span>
+        <section id="projects">
+            <p class="eyebrow centered">Browse my recent</p>
+            <h2 class="title">Featured Projects</h2>
+            <div id="filter-bar" class="filter-bar" role="toolbar" aria-label="Filter projects by tag"></div>
+            <div id="projects-grid" class="grid projects-grid"></div>
+        </section>
+
+        <section id="focus">
+            <p class="eyebrow centered">What I'm building now</p>
+            <h2 class="title">Current Focus</h2>
+            <article class="card focus-card">
+                <div class="focus-header">
+                    <h3>Distributed In-Memory Live NBA Box-Score &amp; Telemetry Engine</h3>
+                    <span class="badge pulse">Active development</span>
                 </div>
-                <ul class="exp-list">
-                    <li>Reverse engineered REST API specs with cross-functional teams to build an isolated simulator, enabling safe testing without risking production hardware.</li>
-                    <li>Scripted Python and Shell tools to parse REST JSON payloads for node setup and IP allocation, reducing manual setup time from <span class="highlight">4+ hours to under 30 minutes</span>.</li>
-                    <li>Engineered helper tools and workflow pipelines enabling AI agents to execute network creation, link updates, and fault injections via natural language.</li>
-                    <li>Containerized backend automation logic with <span class="highlight">Docker</span> for reproducible test execution and developer onboarding.</li>
-                </ul>
-            </div>
-
-            <div class="details-container experience-card">
-                <div class="exp-header">
-                    <div>
-                        <h3>NJ Cybersecurity & Communications Integration Cell</h3>
-                        <p class="exp-role">Data Engineering Extern</p>
-                    </div>
-                    <span class="exp-date">Jan 2025 – May 2025</span>
-                </div>
-                <ul class="exp-list">
-                    <li>Built a scalable pipeline on Google Cloud Platform processing <span class="highlight">2M+ weekly login events</span> to identify top 1% high-risk accounts.</li>
-                    <li>Implemented anomaly detection in BigQuery ML, improving threat detection accuracy by <span class="highlight">22%</span>.</li>
-                    <li>Automated threat classification using PCA and vectorized workflows, reducing analyst time.</li>
-                </ul>
-            </div>
-
-        </div>
-    </section>
-
-    <!-- PROJECTS -->
-    <section id="projects">
-        <p class="section__text__p1">Browse My Recent</p>
-        <h1 class="title">Featured Projects</h1>
-        <div class="experience-details-container">
-
-            <!-- PSS Telecom Network Simulator -->
-            <div class="details-container color-container">
-                <div class="article-container">
-                    <figure class="project-figure">
-                        <img src="./assets/bms.png"
-                             alt="Optical transponder simulator API interface"
-                             class="project-img gallery-thumb"
-                             onclick="openLightbox(this.src)">
-                        <figcaption>Simulator API — add links, inject faults, observe packet flow</figcaption>
-                    </figure>
-                </div>
-                <h2 class="project-title">PSS Telecom Network Simulator</h2>
-                <p class="project-desc">
-                    C++ discrete event engine processing <span class="highlight">1.36M events/sec</span> with Dijkstra routing,
-                    1+1 protection switching, and lock-free concurrency. Deployed via Flask REST API + SQLite + Docker/Kubernetes,
-                    scaling to 10K services in a <span class="highlight">43.8MB memory footprint</span>.
-                </p>
-                <div class="btn-container">
-                    <button class="btn btn-color-2 project-btn"
-                            onclick="window.open('https://github.com/vatsalmalkari')">GitHub</button>
-                </div>
-            </div>
-
-            <!-- Custom C++ Deep Learning Engine (2 images) -->
-            <div class="details-container color-container">
-                <div class="article-container project-gallery">
-                    <figure class="project-figure">
-                        <img src="./assets/face_expression.png"
-                             alt="Live webcam facial expression detection running on the C++ engine"
-                             class="project-img gallery-thumb"
-                             onclick="openLightbox(this.src)">
-                        <figcaption>Real-time webcam inference — expression classified in &lt;100ms</figcaption>
-                    </figure>
-                    <figure class="project-figure">
-                        <img src="./assets/cnn_trace.png"
-                             alt="Apple Instruments profiler trace of CNN training"
-                             class="project-img gallery-thumb"
-                             onclick="openLightbox(this.src)">
-                        <figcaption>Instruments trace — 43.9% in <code>Tensor::backward</code>, near-zero <code>malloc</code></figcaption>
-                    </figure>
-                </div>
-                <h2 class="project-title">Custom C++ Deep Learning Engine</h2>
-                <p class="project-desc">
-                    Framework-free engine with a custom DAG Autograd graph for backpropagation.
-                    Bitwise-aligned Memory Arena reducing OS heap allocation to <span class="highlight">&lt;0.1%</span> of thread runtime.
-                    Real-time webcam inference in under <span class="highlight">100ms</span>.
-                </p>
-                <div class="btn-container">
-                    <button class="btn btn-color-2 project-btn"
-                            onclick="window.open('https://github.com/vatsalmalkari/Cpp-deep-learning-engine')">GitHub</button>
-                </div>
-            </div>
-
-            <!-- Python Interpreter in C -->
-            <div class="details-container color-container">
-                <div class="article-container">
-                    <figure class="project-figure">
-                        <img src="./assets/python_compiler.png"
-                             alt="Terminal running Python code through the custom C interpreter"
-                             class="project-img gallery-thumb"
-                             onclick="openLightbox(this.src)">
-                        <figcaption>Runs Python in-terminal — no CPython, no environment, no dependencies</figcaption>
-                    </figure>
-                </div>
-                <h2 class="project-title">Python Interpreter in C</h2>
-                <p class="project-desc">
-                    Core compiler components (tokenizer, parser, evaluator) with security-first design:
-                    bounds checking on all buffers, reference counting, input validation.
-                    <span class="highlight">Zero buffer overflows</span>, zero memory leaks across 40+ tests.
-                </p>
-                <div class="btn-container">
-                    <button class="btn btn-color-2 project-btn"
-                            onclick="window.open('https://github.com/vatsalmalkari/python-compiler')">GitHub</button>
-                </div>
-            </div>
-
-            <!-- Low-Level Task Scheduler -->
-            <div class="details-container color-container">
-                <div class="article-container">
-                    <figure class="project-figure">
-                        <img src="./assets/task-scheduler.png"
-                             alt="Multiple scheduled tasks executing concurrently"
-                             class="project-img gallery-thumb"
-                             onclick="openLightbox(this.src)">
-                        <figcaption>Concurrent execution — Min Heap scheduling with pthread sync primitives</figcaption>
-                    </figure>
-                </div>
-                <h2 class="project-title">Low-Level Task Scheduler</h2>
-                <p class="project-desc">
-                    C scheduler using Min Heap + Hash Map for <span class="highlight">O(log N)</span> scheduling and
-                    <span class="highlight">O(1)</span> cancellation. Replaced busy-waiting with pthread condition variables.
-                    Stress-tested with 2,000 concurrent tasks.
-                </p>
-                <div class="btn-container">
-                    <button class="btn btn-color-2 project-btn"
-                            onclick="window.open('https://github.com/vatsalmalkari/task-scheduler')">GitHub</button>
-                </div>
-            </div>
-
-            <!-- Anime Script AI (RAG) -->
-            <div class="details-container color-container">
-                <div class="article-container">
-                    <figure class="project-figure">
-                        <img src="./assets/aot-fmab-ai.png"
-                             alt="RAG query interface showing an LLM response grounded in retrieved anime script data"
-                             class="project-img gallery-thumb"
-                             onclick="openLightbox(this.src)">
-                        <figcaption>Retrieval-augmented query — LLM grounded in embedded AoT &amp; FMAB scripts</figcaption>
-                    </figure>
-                </div>
-                <h2 class="project-title">Anime Script AI (RAG)</h2>
-                <p class="project-desc">
-                    Semantic search and RAG system using ChromaDB and SentenceTransformers,
-                    enabling contextual querying and deep analysis of large anime script datasets.
-                </p>
-                <div class="btn-container">
-                    <button class="btn btn-color-2 project-btn"
-                            onclick="window.open('https://github.com/vatsalmalkari/aot_fmab_jjk_ai')">GitHub</button>
-                </div>
-            </div>
-
-        </div>
-    </section>
-
-    <!-- CURRENT FOCUS -->
-    <section id="current-focus">
-        <p class="section__text__p1">What I'm Building Now</p>
-        <h1 class="title">Current Focus</h1>
-        <div class="details-container focus-card">
-            <div class="focus-header">
-                <h3>🏀 Distributed In-Memory Live NBA Box-Score & Telemetry Engine</h3>
-                <span class="badge">Active Development</span>
-            </div>
-            <p>
-                A strongly consistent, distributed engine designed to ingest a massive, rapid-fire stream of
-                play-by-play events from live basketball games and instantly replicate updated player stats
-                across a server cluster — with no lag and no dropped events.
-            </p>
-            <p>
-                Built from scratch in <span class="highlight">Java 21+</span>, the system leverages
-                <span class="highlight">Virtual Threads</span> to handle thousands of concurrent client
-                score-pull requests, a custom <span class="highlight">Raft consensus protocol</span> over
-                <span class="highlight">gRPC</span> for node-to-node replication, and
-                <span class="highlight">off-heap Direct ByteBuffers</span> to eliminate GC pauses during
-                rapid multi-player statistical updates.
-            </p>
-            <div class="badge-list">
-                <span class="badge">Java 21</span>
-                <span class="badge">Virtual Threads</span>
-                <span class="badge">Netty</span>
-                <span class="badge">Raft Consensus</span>
-                <span class="badge">gRPC</span>
-                <span class="badge">Direct ByteBuffers</span>
-                <span class="badge">Distributed Systems</span>
-            </div>
-        </div>
-    </section>
-
-    <!-- SKILLS -->
-    <section id="skills">
-        <p class="section__text__p1">Explore My</p>
-        <h1 class="title">Technical Toolbox</h1>
-        <div class="skills-wrapper">
-
-            <div class="skill-category">
-                <h3>Core Languages</h3>
-                <ul>
-                    <li>C++</li><li>Python</li><li>C</li><li>Java</li>
-                    <li>SQL</li><li>JavaScript</li><li>Shell</li>
-                </ul>
-            </div>
-
-            <div class="skill-category">
-                <h3>ML & Data</h3>
-                <ul>
-                    <li>PyTorch</li><li>TensorFlow</li><li>Hugging Face</li>
-                    <li>Scikit-Learn</li><li>Pandas / NumPy</li>
-                    <li>OpenCV</li><li>BigQuery ML</li>
-                </ul>
-            </div>
-
-            <div class="skill-category">
-                <h3>Backend & Infra</h3>
-                <ul>
-                    <li>FastAPI / Flask</li><li>Django</li><li>Spring Boot</li>
-                    <li>PostgreSQL</li><li>Docker</li><li>Kubernetes</li>
-                    <li>Git / CI-CD</li><li>ChromaDB</li>
-                </ul>
-            </div>
-
-            <div class="skill-category">
-                <h3>Systems & Low-Level</h3>
-                <ul>
-                    <li>Multithreading (pthreads)</li>
-                    <li>Lock-free Programming</li>
-                    <li>Memory Management</li>
-                    <li>OS Scheduling</li>
-                    <li>Linux / Unix</li>
-                </ul>
-            </div>
-
-            <div class="skill-category">
-                <h3>CS Foundations</h3>
-                <ul>
-                    <li>Data Structures & Algorithms</li>
-                    <li>Object-Oriented Programming</li>
-                    <li>REST APIs</li>
-                    <li>System Design</li>
-                    <li>Authentication (JWT)</li>
-                </ul>
-            </div>
-
-        </div>
-    </section>
-
-    <!-- CONTACT -->
-    <section id="contact">
-        <p class="section__text__p1">Get In Touch</p>
-        <h1 class="title">Contact Me</h1>
-        <div class="contact-info-upper-container">
-            <div class="contact-info-container">
                 <p>
-                    <a href="mailto:vatsalmalkari@gmail.com">vatsalmalkari@gmail.com</a>
+                    A strongly consistent, distributed engine that ingests a rapid stream of play-by-play
+                    events from live games and replicates updated player stats across a server cluster,
+                    with no lag and no dropped events.
                 </p>
+                <p>
+                    Built from scratch in <span class="highlight">Java 21+</span> using
+                    <span class="highlight">Virtual Threads</span> for thousands of concurrent requests, a
+                    custom <span class="highlight">Raft consensus protocol</span> over
+                    <span class="highlight">gRPC</span> for replication, and
+                    <span class="highlight">off-heap Direct ByteBuffers</span> to avoid GC pauses during
+                    rapid stat updates.
+                </p>
+                <div class="tag-list">
+                    <span class="badge">Java 21</span>
+                    <span class="badge">Virtual Threads</span>
+                    <span class="badge">Netty</span>
+                    <span class="badge">Raft Consensus</span>
+                    <span class="badge">gRPC</span>
+                    <span class="badge">Direct ByteBuffers</span>
+                    <span class="badge">Distributed Systems</span>
+                </div>
+            </article>
+        </section>
+
+        <section id="skills">
+            <p class="eyebrow centered">Explore my</p>
+            <h2 class="title">Technical Toolbox</h2>
+            <div id="skills-grid" class="grid skills-grid"></div>
+        </section>
+
+        <section id="contact" class="contact">
+            <p class="eyebrow centered">Get in touch</p>
+            <h2 class="title">Contact Me</h2>
+            <div class="card contact-card">
+                <a href="mailto:vatsalmalkari@gmail.com" class="contact-item">vatsalmalkari@gmail.com</a>
+                <a href="tel:+19259688233" class="contact-item">(925) 968-8233</a>
+                <div class="contact-icons">
+                    <a href="https://www.linkedin.com/in/vatsal-malkari/" target="_blank" rel="noopener"
+                       aria-label="LinkedIn profile">
+                        <img src="./assets/linkedin.png" alt="" class="icon">
+                    </a>
+                    <a href="https://github.com/vatsalmalkari" target="_blank" rel="noopener"
+                       aria-label="GitHub profile">
+                        <img src="./assets/github.png" alt="" class="icon">
+                    </a>
+                </div>
             </div>
-            <div class="contact-info-container">
-                <p>(925) 968-8233</p>
-            </div>
-            <div class="contact-info-container">
-                <img src="./assets/linkedin.png" alt="LinkedIn" class="icon contact-icon"
-                     onclick="window.open('https://www.linkedin.com/in/vatsal-malkari/')">
-                <img src="./assets/github.png" alt="GitHub" class="icon contact-icon"
-                     onclick="window.open('https://github.com/vatsalmalkari')">
-            </div>
-        </div>
-    </section>
+        </section>
+
+    </main>
 
     <footer>
-        <p>&#169; 2026 Vatsal Malkari. Built with precision and code.</p>
+        <p>&copy; 2026 Vatsal Malkari. Built with precision and code.</p>
     </footer>
 
-    <!-- LIGHTBOX -->
-    <div id="lightbox" class="lightbox" onclick="closeLightbox()">
-        <span class="lightbox-close">&times;</span>
-        <img id="lightbox-img" src="" alt="Expanded view">
+    <div id="lightbox" class="lightbox" role="dialog" aria-modal="true" aria-label="Image viewer" hidden>
+        <button class="lb-close" aria-label="Close">&times;</button>
+        <button class="lb-prev" aria-label="Previous image">&#8249;</button>
+        <figure class="lb-figure">
+            <img id="lightbox-img" src="" alt="">
+            <figcaption id="lightbox-caption"></figcaption>
+        </figure>
+        <button class="lb-next" aria-label="Next image">&#8250;</button>
     </div>
 
-    <script src="script.js"></script>
+    <script src="script.js" defer></script>
 </body>
 </html>
