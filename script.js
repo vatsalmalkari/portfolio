@@ -53,11 +53,11 @@ const projects = [
   },
     {
       title: "Arcade shooter game (C++ & OpenGL)",
-      desc: "2D arcade shooter game built with OpenGL, featuring real-time rendering, collision detection, and player controls.",
+      desc: "Real-time 2D shooter in C++17 and OpenGL 4.1. Fixed-timestep game loop, RAII wrappers for GPU resources, shared mesh, AABB collision, and GLSL shaders with textures and alpha blending.",
       images: [
         { src: "./assets/shooter_game.png", caption: "Arcade shooter game running in C++ and OpenGL" },
       ],
-      tags: ["C++", "OpenGL", "Game Development"],
+      tags: ["C++", "OpenGL", "Game Development", "Systems"],
       github: "https://github.com/vatsalmalkari/shooter_game",
       roles: ["backend"],
     }
@@ -142,7 +142,6 @@ themeBtns.forEach((btn) =>
   })
 );
 
-// Follow live OS changes only if the visitor hasn't picked a theme
 osDark.addEventListener("change", (e) => {
   if (!localStorage.getItem("theme")) {
     root.setAttribute("data-theme", e.matches ? "dark" : "light");
@@ -203,7 +202,6 @@ function renderSkills() {
   });
 }
 
-// Projects: filtering by tag, ordering by ?role=
 const activeRole = new URLSearchParams(location.search).get("role");
 const filterBar = $("#filter-bar");
 const projectsGrid = $("#projects-grid");
