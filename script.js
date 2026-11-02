@@ -51,6 +51,16 @@ const projects = [
     github: "https://github.com/vatsalmalkari/aot_fmab_jjk_ai",
     roles: ["ml"],
   },
+    {
+      title: "Arcade shooter game (C++ & OpenGL)",
+      desc: "2D arcade shooter game built with OpenGL, featuring real-time rendering, collision detection, and player controls.",
+      images: [
+        { src: "./assets/shooter_game.png", caption: "Arcade shooter game running in C++ and OpenGL" },
+      ],
+      tags: ["C++", "OpenGL", "Game Development"],
+      github: "https://github.com/vatsalmalkari/shooter_game",
+      roles: ["backend"],
+    }
 ];
 
 const experience = [
