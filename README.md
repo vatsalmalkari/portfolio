@@ -16,10 +16,15 @@ A personal portfolio showcasing my projects, experience, and technical skills in
 
 ## Project structure
 ├── assets/ Images, icons, and resume PDF
+
 ├── index.html Page structure and content
+
 ├── script.js Data (projects, experience, skills) and interactivity
+
 ├── style.css Styles, theme variables, and responsive layout
+
 └── README.md
+
 ## Contact
 
 - Email: vatsalmalkari@gmail.com
